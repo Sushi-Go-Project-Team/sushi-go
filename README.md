@@ -1,1 +1,1 @@
-# sushi-go
+# Sushi Go
