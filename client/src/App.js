@@ -8,6 +8,10 @@ import Results from "./pages/Results"
 
 export default function App() {
   const socket = io.connect("http://localhost:4000")
+  socket.emit('test-channel', "a test message")
+  socket.on('other-test-channel', (data) => {
+    console.log('received socket data from server:', JSON.stringify(data));
+  });
 
   return (
     <div className="App">

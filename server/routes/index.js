@@ -17,6 +17,17 @@ io = require('socket.io')(server, {
 
 io.on("connection", (socket) => {
   console.log("Connected & Socket Id is ", socket.id)
+
+  socket.on('disconnect', () => {
+    console.log('client disconnected:', socket.id);
+  });
+
+  socket.on('test-channel', (data) => {
+    console.log('received socket data from client:', JSON.stringify(data));
+  });
+
+  socket.emit('test-channel', "another test message")
+
 })
 
 /* GET home page. */
