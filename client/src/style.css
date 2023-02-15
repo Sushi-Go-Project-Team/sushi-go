@@ -1,3 +1,36 @@
+.Results {
+    text-align: center;
+}
+
+.Player {
+    float: left;
+    position: relative;
+    width: 400px;
+    margin-left: 50%;
+    left: -200px;
+    text-align: left;
+    padding: 7px;
+    background-color: lightsalmon;    
+}
+
+
+.Rematch {
+    float: left;
+    position: relative;
+    width: 400px;
+    margin-left: 50%;
+    left: -200px;
+    text-align: center;
+    padding: 2px;
+    background-color: pink;    
+
+}
+
+.Score {
+    float: left;
+    text-align: center;
+}
+
 body {
     background-color: #F9FFE9;
   }
@@ -34,5 +67,4 @@ body {
   }
   
   
-  
-  
+ 
