@@ -9,7 +9,6 @@ export default function Results() {
             <pre><p className = "Player">3 OTHER PLAYER 2                               43</p></pre>
             <pre><p className = "Player">4 LAST BUT NOT LEAST                           45</p> </pre>
             <h2 className = "Rematch"> Rematch!</h2>
-
         </div>
     )
 }
