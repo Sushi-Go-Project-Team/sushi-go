@@ -2,34 +2,25 @@
     text-align: center;
 }
 
-.Player {
-    float: left;
-    position: relative;
-    width: 400px;
-    margin-left: 50%;
-    left: -200px;
-    text-align: left;
-    padding: 7px;
-    background-color: lightsalmon;    
+.Container {
+  display: grid;
+  justify-content: center;
+  padding: 7px;
 }
 
+.Player  {
+    font-size:medium;
+    padding: 7px;
+    background-color: lightsalmon; 
+}
 
 .Rematch {
-    float: left;
-    position: relative;
-    width: 400px;
-    margin-left: 50%;
-    left: -200px;
-    text-align: center;
-    padding: 2px;
-    background-color: pink;    
-
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: pink;  
+    font-weight: bold;  
 }
 
-.Score {
-    float: left;
-    text-align: center;
-}
 
 .Card--name {
     font-size: 20px;
