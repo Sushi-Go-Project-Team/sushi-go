@@ -31,6 +31,18 @@
     text-align: center;
 }
 
+.Card--name {
+    font-size: 20px;
+}
+
+.Card--image {
+  width: 400px;
+}
+
+.Card--value {
+  font-size: 20px;
+}
+
 body {
     background-color: #F9FFE9;
   }
