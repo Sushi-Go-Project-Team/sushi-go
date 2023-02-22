@@ -4,6 +4,7 @@ import Card from "./components/Card"
 import Game from "./pages/Game"
 import Instructions from "./pages/Instructions"
 import Join from "./pages/Join"
+import NewCode from "./pages/NewCode"
 import Results from "./pages/Results";
 import '../src/style.css'
 
@@ -22,6 +23,7 @@ export default function App() {
       <Game />
       <Instructions />
       <Join />
+      <NewCode />
       <Results> </Results>
     </div>
   );
