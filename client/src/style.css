@@ -1,0 +1,82 @@
+.Results {
+    text-align: center;
+}
+
+.Player {
+    float: left;
+    position: relative;
+    width: 400px;
+    margin-left: 50%;
+    left: -200px;
+    text-align: left;
+    padding: 7px;
+    background-color: lightsalmon;    
+}
+
+
+.Rematch {
+    float: left;
+    position: relative;
+    width: 400px;
+    margin-left: 50%;
+    left: -200px;
+    text-align: center;
+    padding: 2px;
+    background-color: pink;    
+
+}
+
+.Score {
+    float: left;
+    text-align: center;
+}
+
+.Card--name {
+    font-size: 20px;
+}
+
+.Card--image {
+  width: 400px;
+}
+
+.Card--value {
+  font-size: 20px;
+}
+
+body {
+    background-color: #F9FFE9;
+  }
+  
+  .banner {
+    background-color: #FFD0C6;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .button {
+    background-color: #FFD0C6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  
+ 

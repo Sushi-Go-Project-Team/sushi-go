@@ -4,7 +4,9 @@ import Card from "./components/Card"
 import Game from "./pages/Game"
 import Instructions from "./pages/Instructions"
 import Join from "./pages/Join"
-import Results from "./pages/Results"
+import Results from "./pages/Results";
+import '../src/style.css'
+
 
 export default function App() {
   const socket = io.connect("http://localhost:4000")
@@ -15,12 +17,12 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      {/* <h1>Hello World</h1> */}
       <Card />
       <Game />
       <Instructions />
       <Join />
-      <Results />
+      <Results> </Results>
     </div>
   );
 }
