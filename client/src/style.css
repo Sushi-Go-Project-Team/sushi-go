@@ -21,19 +21,53 @@
     font-weight: bold;  
 }
 
+.Card--deck {
+  margin: 20px;
+}
+
+.GamePage {
+  height: 700px;
+}
 
 .Card--name {
     font-size: 20px;
 }
 
 .Card--image {
-  width: 400px;
+  width: 150px;
 }
 
 .Card--value {
   font-size: 20px;
 }
 
+.Card--setOne{
+  display: flex;
+}
+
+.Card--setTwo {
+  display: flex;
+  justify-content: end;
+}
+
+.Card--setThree {
+  display: flex;
+  align-items: end;
+}
+.Card--setFour {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.Card--container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 100px;
+}
+.Card--container>* {
+  flex: 1 1 748px;
+}
 body {
     background-color: #F9FFE9;
   }
