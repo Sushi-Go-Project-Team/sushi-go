@@ -1,5 +1,6 @@
 import React from "react"
 import io from "socket.io-client"
+import {Routes, Route} from "react-router-dom"
 import Card from "./components/Card"
 import Game from "./pages/Game"
 import Instructions from "./pages/Instructions"
@@ -18,13 +19,14 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* <h1>Hello World</h1> */}
-      <Card />
-      <Game />
       <Instructions />
-      <Join />
-      <NewCode />
-      <Results> </Results>
+    <Routes>
+      <Route path="/game" element={<Game />}></Route>
+      <Route path="/" element={<Instructions />}></Route>
+      <Route path="/join" element={<Join />}></Route>
+      <Route path="/results" element={<Results />}></Route>
+      <Route path="/newcode" element={<NewCode />}></Route>
+    </Routes>
     </div>
   );
 }
