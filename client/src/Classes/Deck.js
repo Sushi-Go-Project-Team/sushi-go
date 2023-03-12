@@ -23,5 +23,6 @@ class Deck {
     } 
 }
 
+export default {Deck};
 //Holds all exported functons/attributes
 
