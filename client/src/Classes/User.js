@@ -1,12 +1,12 @@
 
-// const {
-//     deck,
-//     dealPlayerHand
-//     }    = require("./Deck.js");
+const {
+    deck,
+    dealPlayerHand
+    }    = require("./Deck.js");
 
-
+//make common deck for all users 
 class User {
-    static d = deck()
+    static d = deck
     constructor(userID, cardsToPick, hand, numPuddings, leftUser, rightUser) {
         this.userID = userID;
         this.cardsToPick = cardsToPick;

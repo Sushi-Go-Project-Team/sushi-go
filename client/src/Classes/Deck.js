@@ -15,8 +15,7 @@ class Deck {
 
     dealPlayerHand(userHand) {
         //at start of game deal 7 random cards to each User
-
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 7; i++) {
             let randIdx = Math.floor(Math.random() * deck.length)
             let randC = deck.remove(randIdx)
             userHand.append(randC)
@@ -25,5 +24,4 @@ class Deck {
 }
 
 //Holds all exported functons/attributes
-module.exports.deck = this.deck;
-module.exports.dealPlayerHand = this.dealPlayerHand;
+
