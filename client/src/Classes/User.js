@@ -1,8 +1,14 @@
 //make common deck for all users 
+<<<<<<< HEAD
 
 import {Deck} from './Deck.js'
 class User {
     static d = new Deck()
+=======
+import {Deck} from './Deck.js'
+class User {
+    static d = new Deck();
+>>>>>>> main
     constructor(userID, cardsToPick, hand, numPuddings, leftUser, rightUser) {
         this.userID = userID;
         this.cardsToPick = cardsToPick;
