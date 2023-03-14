@@ -29,7 +29,6 @@ export default function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <ChakraProvider>
       <div className="App">
         {/* <h1>Hello World</h1> */}
         <Card />
@@ -56,6 +55,5 @@ export default function App() {
         <NewCode />
         <Results> </Results>
       </div>
-    </ChakraProvider>
   );
 }
