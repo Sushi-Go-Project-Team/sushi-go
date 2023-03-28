@@ -2,8 +2,8 @@ import React from "react"
 
 export default function Instructions() {
     return (
-        <div>
-            <h1>How to Play:</h1>
+        <div className="instructions">
+            <h1 className="instructions-heading">How to Play:</h1>
             {/* types of cards and flip them around to see point value and type and all8*/}
             <p>Displayed below are brief descriptions of the cards you'll use in this game. Check them out and get on with the game!</p>
             <p className="SoySauce">Soy Sauce Eggs</p> 

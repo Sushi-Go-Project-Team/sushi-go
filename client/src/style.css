@@ -1,3 +1,11 @@
+.instructions {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #FEFAE0;
+}
+
 .Results {
     text-align: center;
 }
