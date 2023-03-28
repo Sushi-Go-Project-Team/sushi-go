@@ -1,3 +1,19 @@
+.instructions {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 200px;
+    background-color: #FEFAE0;
+}
+
+.instructions-heading {
+    text-align: center;
+    font-size: 120px;
+    font-family: Sniglet;
+    margin: 0px;
+    padding: 0px;
+    color: #DD4B4B;
+}
+
 .Results {
     text-align: center;
 }
