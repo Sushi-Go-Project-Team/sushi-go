@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Sushi-Go-Project-Team/sushi-go/issues"
   },
-  "homepage": "https://github.com/Sushi-Go-Project-Team/sushi-go#readme"
+  "homepage": "https://github.com/Sushi-Go-Project-Team/sushi-go#readme",
+  "dependencies": {
+    "immer": "^9.0.21",
+    "socket.io-client": "^4.6.1"
+  }
 }

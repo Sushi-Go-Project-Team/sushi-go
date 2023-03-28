@@ -26,6 +26,10 @@ io.on("connection", (socket) => {
     console.log('received socket data from client:', JSON.stringify(data));
   });
 
+  socket.on('room-code', (data) => {
+    console.log('received room code', JSON.stringify(data));
+  });
+
   socket.emit('test-channel', "another test message")
 
 })
