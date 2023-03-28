@@ -7,6 +7,7 @@ import Instructions from "./pages/Instructions"
 import Join from "./pages/Join"
 import NewCode from "./pages/NewCode"
 import Results from "./pages/Results";
+import Login from "./pages/Login";
 import '../src/style.css'
 
 
@@ -19,13 +20,13 @@ export default function App() {
 
   return (
     <div className="App">
-      <Instructions />
     <Routes>
       <Route path="/game" element={<Game />}></Route>
-      <Route path="/" element={<Instructions />}></Route>
+      <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join />}></Route>
       <Route path="/results" element={<Results />}></Route>
       <Route path="/newcode" element={<NewCode />}></Route>
+      <Route path="/" element={<Login />}></Route>
     </Routes>
     </div>
   );
