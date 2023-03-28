@@ -12,7 +12,7 @@ export default function Results() {
                 <pre><p className = "Player">2 OTHER PLAYER                                50</p></pre>
                 <pre><p className = "Player">3 OTHER PLAYER 2                              43</p></pre>
                 <pre><p className = "Player">4 LAST BUT NOT LEAST                          45</p> </pre>
-                <Button><Link to="/join">Rematch!</Link></Button>
+                <Button><Link to="/join" className = "button--link">Rematch!</Link></Button>
                 {/*<button className = "Rematch"> Rematch!</button>*/}
             </body>
         </div>
