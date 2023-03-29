@@ -11,7 +11,7 @@ export default function Join() {
 
 	async function signOutUser() {
         const {error} = await supabase.auth.signOut();
-        navigate("/login");
+        navigate("/");
     }
 
     return (
