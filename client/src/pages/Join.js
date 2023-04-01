@@ -1,37 +1,35 @@
 import React from "react"
 import io from "socket.io-client"
+import {Link} from "react-router-dom"
+import Button from "react-bootstrap/Button"
+import {useNavigate} from 'react-router-dom';
+import {createClient} from '@supabase/supabase-js';
+
+const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_ANON_KEY);
 
 export default function Join() {
+	const navigate = useNavigate();
 
-	const socket = io.connect("http://localhost:4000")
-  	socket.emit('test-channel', "a test message")
-  	socket.on('other-test-channel', (data) => {
-    	console.log('received socket data from server:', JSON.stringify(data));
-  	});
+	async function signOutUser() {
+        const {error} = await supabase.auth.signOut();
+        navigate("/");
+    }
 
-	function roomJoinListener() {
-		console.log("quit");
-		socket.emit('room-code', "123456")
-	  }
+
 
     return (
-        <div>
-            <head>
-	            <title>Sushi Go</title>
-	            <link rel="stylesheet" type="text/css" href="style.css"/>
-            </head>
-            <body>
-	            <div class="banner">
-		            <h1>Sushi Go</h1>
-	            </div>
-	            <div class="center">
-		            <h2>Join Game</h2>
-		            <input type="text" placeholder="Game Pin"/>
-		            <button onClick={roomJoinListener} class= "button">Enter</button>
-		            <p>OR</p>
-		            <button class="button">Create New</button>
-	            </div>
-            </body>
+        <div className="join">
+			<div>
+			<img src="images/join-logo.png" alt="logo" className="join-image"/>
+			</div>
+	        <div className="center">
+		        <h2>Join Game</h2>
+	            <input type="text" placeholder="Game Pin"/>
+	            <button>Enter</button>
+	            <p>OR</p>
+	            <button>Create New</button>
+				<button onClick={() => signOutUser()}> Logout </button>
+            </div>
         </div>
     )
 }

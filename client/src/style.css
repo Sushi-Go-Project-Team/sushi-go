@@ -1,3 +1,54 @@
+button {
+  background-color: #DD4B4B;
+  color: #FEFAE0;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 24px;
+  display: inline-block;
+  font-size: 16px
+}
+
+input[type=text] {
+  background-color: #A8BA73;
+  color: #FEFAE0;
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: none;
+  font-size: 16px;
+}
+
+.instructions {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 200px;
+    background-color: #FEFAE0;
+}
+
+.instructions-heading {
+    text-align: center;
+    font-size: 120px;
+    font-family: Sniglet;
+    margin: 0px;
+    padding: 0px;
+    color: #DD4B4B;
+}
+
+.join {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-family: Sniglet;
+    margin: 0px;
+    padding: 0px;
+    color: #DD4B4B;
+}
+
+.join-image {
+  width: 500px;
+}
+
 .Results {
     text-align: center;
 }
@@ -22,11 +73,12 @@
 }
 
 .Card--deck {
-  margin: 20px;
+ margin: 20px;
 }
 
 .GamePage {
   height: 700px;
+  background-color: #B0BA73;
 }
 
 .Card--name {
@@ -86,22 +138,22 @@ body {
     height: 100vh;
   }
   
-  .button {
+  /* .button {
     background-color: #FFD0C6;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     margin: 10px;
-  }
+  } */
   
-  input {
+  /* input {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
-  }
+  } */
   
   
  
