@@ -23,10 +23,10 @@ export default function App() {
     <Routes>
       <Route path="/game" element={<Game />}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
-      <Route path="/" element={<Join />}></Route>
+      <Route path="/join" element={<Join />}></Route>
       <Route path="/results" element={<Results />}></Route>
       <Route path="/newcode" element={<NewCode />}></Route>
-      <Route path="/login" element={<Login />}></Route>
+      <Route path="/" element={<Login />}></Route>
     </Routes>
     </div>
   );
