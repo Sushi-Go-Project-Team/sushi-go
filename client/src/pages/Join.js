@@ -22,7 +22,7 @@ export default function Join() {
 	            <button>Enter</button>
 	            <p>OR</p>
 	            <button>Create New</button>
-				<button class = "button" onClick={() => signOutUser()}> Logout </button>
+				<button onClick={() => signOutUser()}> Logout </button>
             </div>
         </div>
     )
