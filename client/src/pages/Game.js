@@ -6,10 +6,6 @@ import Button from "react-bootstrap/Button"
 export default function Game() {
     return (
         <div className="GamePage">
-            {/* <h1>Game</h1>
-            <Card />
-            <Card /> */}
-            <h1>Game</h1>
             <div className="Card--container">
                 <div className="Card--setOne">
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>

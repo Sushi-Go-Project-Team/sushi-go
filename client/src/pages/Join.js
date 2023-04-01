@@ -6,9 +6,9 @@ export default function Join() {
 	        <div class="center join">
 		        <h2>Join Game</h2>
 	            <input type="text" placeholder="Game Pin"/>
-	            <button class= "button">Enter</button>
+	            <button>Enter</button>
 	            <p>OR</p>
-	            <button class="button">Create New</button>
+	            <button>Create New</button>
             </div>
         </div>
     )
