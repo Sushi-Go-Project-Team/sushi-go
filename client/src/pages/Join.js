@@ -22,7 +22,7 @@ export default function Join({socket}) {
         setCode( event.target.value);
 	}
 
-	function joinRoom(e) {
+	function joinRoom() {
 		const roomIdNum = code;
 		socket.join(roomIdNum);
 		socket.to(roomIdNum).emit('joined-room', roomIdNum);

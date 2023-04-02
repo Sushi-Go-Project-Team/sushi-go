@@ -22,15 +22,13 @@ io.on("connection", (socket) => {
     console.log('client disconnected:', socket.id);
   });
 
-  socket.on('test-channel', (data) => {
-    console.log('received socket data from client:', JSON.stringify(data));
+  socket.on('joined-room', (data) => {
+    console.log("joined room!");
   });
 
-  socket.on('room-code', (data) => {
-    console.log('received room code', JSON.stringify(data));
+  socket.on('created-room', (data) => {
+    console.log("created room!");
   });
-
-  socket.emit('test-channel', "another test message")
 
 })
 
