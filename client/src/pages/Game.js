@@ -1,10 +1,20 @@
 import React from "react"
 import Card from "../components/Card.js"
+import Modal from "../components/Modal.js"
+import { useState } from "react";
 
 export default function Game() {
+    const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
     return (
             <div className="GamePage">
                 <h1>Game</h1>
+                <button className="openModalBtn" onClick={() => {
+                    setOpenModal(true)
+                    }}
+                    >
+                        Open
+                </button> 
+                {openModal && <Modal closeModal={setOpenModal}/>}
                 <div className="Card--container">
                     <div className="Card--setOne">
                         <Card className="Card--image" name="Soy Sauce Eggs" image="images/GameCards.png" value="14"/>
