@@ -63,7 +63,6 @@ input[type=text] {
 .join-logout {
   background-color: #FEFAE0;
   color: #DD4B4B;
-  font-decoration: underline;
 }
 
 .join-div {
@@ -75,27 +74,41 @@ input[type=text] {
   width: 500px;
 }
 
-.Results {
+.results {
     text-align: center;
+    font-family: Sniglet;
+    font-size: 50px;
+    color: #DD4B4B;
 }
 
-.Container {
+.container {
   display: grid;
   justify-content: center;
-  padding: 7px;
 }
 
-.Player  {
-    font-size:medium;
-    padding: 7px;
-    background-color: lightsalmon; 
+.player  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  padding: 0px;
+  margin-bottom: 20px;
+    font-family: Sniglet;
+    font-size: 24px;
+    color: black;
+    background-color: #B0BA73;
+    border-radius: 20px;
 }
 
-.Rematch {
-    border-radius: 10px;
-    font-size: 20px;
-    background-color: pink;  
-    font-weight: bold;  
+.player p {
+  padding: 0px;
+  margin: 0px 20px 0px 20px;
+}
+
+.rematch {
+  margin-top: 50px;
+    background-color: #B0BA73;
 }
 
 .Card--deck {
