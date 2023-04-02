@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import Card from "../components/Card.js"
 import Button from "react-bootstrap/Button"
 
-export default function Game() {
+export default function Game(props) {
     return (
         <div className="GamePage">
             <div className="Card--container">

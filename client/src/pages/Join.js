@@ -7,7 +7,7 @@ import {createClient} from '@supabase/supabase-js';
 
 const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_ANON_KEY);
 
-export default function Join() {
+export default function Join({socket}) {
 	const navigate = useNavigate();
 
 	async function signOutUser() {
@@ -15,7 +15,25 @@ export default function Join() {
         navigate("/");
     }
 
+	const [code, setCode] = React.useState("")
 
+	function handleChange(event) {
+        // const {name, value, type, checked} = event.target
+        setCode( event.target.value);
+	}
+
+	function joinRoom(e) {
+		const roomIdNum = code;
+		socket.join(roomIdNum);
+		socket.to(roomIdNum).emit('joined-room', roomIdNum);
+	}
+
+	function createRoom() {
+		const roomIdNum = Math.floor(Math.random() * 100000) + 100000;
+		socket.join(roomIdNum.toString());
+		socket.to(roomIdNum).emit('created-room', roomIdNum);
+		
+	}
 
     return (
         <div className="join">
@@ -24,10 +42,10 @@ export default function Join() {
 			</div>
 	        <div className="center">
 		        <h2>Join Game</h2>
-	            <input type="text" placeholder="Game Pin"/>
-	            <button>Enter</button>
+	            <input type="text" placeholder="Game Pin" onChange = {handleChange}/>
+	            <button onClick = {joinRoom} >Enter</button>
 	            <p>OR</p>
-	            <button>Create New</button>
+	            <button onClick = {createRoom}>Create New</button>
 				<button onClick={() => signOutUser()}> Logout </button>
             </div>
         </div>
