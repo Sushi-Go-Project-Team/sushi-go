@@ -37,6 +37,7 @@ input[type=text] {
 
 .join {
     display: flex;
+    flex-direction: horizontal;
     align-items: center;
     font-size: 50px;
     font-family: Sniglet;
@@ -45,7 +46,12 @@ input[type=text] {
     color: #DD4B4B;
 }
 
+.join-div {
+  flex: 1;
+}
+
 .join-image {
+  margin-left: 100px;
   width: 500px;
 }
 

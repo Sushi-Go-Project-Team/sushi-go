@@ -16,10 +16,10 @@ export default function Join() {
 
     return (
         <div className="join">
-			<div>
+			<div className = "join-div">
 			<img src="images/join-logo.png" alt="logo" className="join-image"/>
 			</div>
-	        <div className="center">
+	        <div className="center join-div">
 		        <h2>Join Game</h2>
 	            <input type="text" placeholder="Game Pin"/>
 	            <button>Enter</button>
