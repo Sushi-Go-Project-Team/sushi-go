@@ -22,15 +22,15 @@ export default function Join({socket}) {
         setCode( event.target.value);
 	}
 
-	function joinRoom() {
+	async function joinRoom() {
 		const roomIdNum = code;
-		socket.join(roomIdNum);
+		await socket.join(roomIdNum);
 		socket.to(roomIdNum).emit('joined-room', roomIdNum);
 	}
 
-	function createRoom() {
+	async function createRoom() {
 		const roomIdNum = Math.floor(Math.random() * 100000) + 100000;
-		socket.join(roomIdNum.toString());
+		await socket.join(roomIdNum.toString());
 		socket.to(roomIdNum).emit('created-room', roomIdNum);
 		
 	}
