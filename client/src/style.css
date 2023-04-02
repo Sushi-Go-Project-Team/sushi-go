@@ -26,17 +26,26 @@ input[type=text] {
 .instructions {
     font-size: 20px;
     font-weight: bold;
-    padding: 200px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 100px;
+    padding-bottom: 150px;
     background-color: #FEFAE0;
 }
 
 .instructions-heading {
     text-align: center;
-    font-size: 120px;
+    font-size: 75px;
     font-family: Sniglet;
     margin: 0px;
     padding: 0px;
     color: #DD4B4B;
+}
+
+.instructions-button {
+  display: grid;
+  margin: auto;
+  margin-top: 75px;
 }
 
 .join {
@@ -107,8 +116,13 @@ input[type=text] {
 }
 
 .rematch {
+  margin: auto;
   margin-top: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
     background-color: #B0BA73;
+    text-align: center;
+    width: 150px;
 }
 
 .Card--deck {

@@ -47,7 +47,7 @@ export default function Instructions() {
             <p className="Mochi">Mochi</p>
             <p className="mochiDesc">The player with the most mochi cards at the end of the game scores 6 points and the player with the least mochi cards will lose 6 points. If multiple people tie for first or last place, the points gained or lost will be split evenly among them. </p>
 
-            <Button><Link to="/join" className = "button--link">Back to Join</Link></Button>
+            <Button className = "instructions-button"><Link to="/join" className = "button--link">Back to Join</Link></Button>
 
         </div>
     )
