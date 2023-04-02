@@ -20,12 +20,12 @@ export default function Join() {
 			<img src="images/join-logo.png" alt="logo" className="join-image"/>
 			</div>
 	        <div className="center join-div">
-		        <h2>Join Game</h2>
+		        <p className="join-text">Enter Game Room Pin:</p>
 	            <input type="text" placeholder="Game Pin"/>
 	            <button>Enter</button>
-	            <p>OR</p>
-	            <button>Create New</button>
-				<button onClick={() => signOutUser()}> Logout </button>
+	            <p className="join-or">OR</p>
+	            <button>Create Room</button>
+				<button className="join-logout" onClick={() => signOutUser()}> Logout </button>
             </div>
         </div>
     )

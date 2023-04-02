@@ -12,11 +12,15 @@ button {
 
 input[type=text] {
   background-color: #A8BA73;
-  color: #FEFAE0;
   padding: 10px 20px;
   border-radius: 24px;
   border: none;
   font-size: 16px;
+  margin: 10px;
+}
+
+::placeholder {
+  color: #FEFAE0;
 }
 
 .instructions {
@@ -39,11 +43,27 @@ input[type=text] {
     display: flex;
     flex-direction: horizontal;
     align-items: center;
-    font-size: 50px;
     font-family: Sniglet;
     margin: 0px;
     padding: 0px;
-    color: #DD4B4B;
+}
+
+.join-text {
+  font-size: 24px;
+  font-weight: regular;
+  color: #BC6C25;
+}
+
+.join-or {
+  font-size: 24px;
+  font-weight: regular;
+  color: #000000;
+}
+
+.join-logout {
+  background-color: #FEFAE0;
+  color: #DD4B4B;
+  font-decoration: underline;
 }
 
 .join-div {
