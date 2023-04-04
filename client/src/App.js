@@ -9,8 +9,22 @@ import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing"
 import '../src/style.css'
+import '../src/modal.css'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+} from '@chakra-ui/react'
 
 export default function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   const [socket, setSocket] = useState(io.connect("http://localhost:4000"));
   
   useEffect(() => {

@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "framer-motion": "^4.1.17",
     "@supabase/auth-ui-react": "^0.3.5",
     "@supabase/supabase-js": "^2.12.1",
     "@testing-library/jest-dom": "^5.16.5",

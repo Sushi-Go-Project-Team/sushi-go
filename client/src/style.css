@@ -135,11 +135,11 @@ input[type=text] {
 }
 
 .Card--name {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .Card--image {
-  width: 150px;
+width: 150px;
 }
 
 .Card--value {
@@ -171,7 +171,7 @@ input[type=text] {
   row-gap: 100px;
 }
 .Card--container>* {
-  flex: 1 1 748px;
+  flex: 1 1 740px;
 }
 body {
     background-color: #F9FFE9;

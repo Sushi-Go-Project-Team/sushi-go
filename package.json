@@ -1,0 +1,25 @@
+{
+  "name": "sushi-go",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sushi-Go-Project-Team/sushi-go.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sushi-Go-Project-Team/sushi-go/issues"
+  },
+  "homepage": "https://github.com/Sushi-Go-Project-Team/sushi-go#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "framer-motion": "^4.1.17"
+  }
+}
