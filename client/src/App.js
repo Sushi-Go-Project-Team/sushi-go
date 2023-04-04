@@ -11,6 +11,7 @@ import Join from "./pages/Join"
 import NewCode from "./pages/NewCode"
 import Results from "./pages/Results";
 import Login from "./pages/Login";
+import Landing from "./pages/Landing"
 import '../src/style.css'
 
 export default function App() {
@@ -39,7 +40,7 @@ export default function App() {
       <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join socket = {socket} />}></Route>
       <Route path="/results" element={<Results socket = {socket} />}></Route>
-      <Route path="/newcode" element={<NewCode socket = {socket} />}></Route>
+      <Route path="/landing" element={<Landing socket = {socket} />}></Route>
       <Route path="/" element={<Login />}></Route>
     </Routes>
     </div>

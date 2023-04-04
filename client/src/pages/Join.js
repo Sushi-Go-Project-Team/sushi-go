@@ -42,9 +42,9 @@ export default function Join({socket}) {
 	        <div className="center">
 		        <h2>Join Game</h2>
 	            <input type="text" placeholder="Game Pin" onChange = {handleChange}/>
-	            <button onClick = {joinRoom} ><Link to="/landing">Enter</Link></button>
+	            <button onClick = {joinRoom}><Link to="/landing">Enter</Link></button>
 	            <p>OR</p>
-	            <button onClick = {createRoom}>Create New</button>
+	            <button onClick = {createRoom}><Link to="/landing">Create New</Link></button>
 				{pin != "" && <p>New Game Pin: {pin}</p>}
 				<button onClick={() => signOutUser()}> Logout </button>
             </div>
