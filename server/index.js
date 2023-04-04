@@ -24,12 +24,12 @@ io.on("connection", (socket) => {
     io.to('room1').emit('event1', data);
   });
 
-  // used to create/join room with room code
-  socket.on('join', (roomId, id)=>{
-    console.log(roomId);
-    socket.join(roomId);
-    io.to(roomId).emit('join', id);
-  });
+ // used to create/join room with room code
+ socket.on('join', (roomId, id)=>{
+  console.log(roomId);
+  socket.join(roomId);
+  io.to(roomId).emit('join', id);
+});
 
   socket.on('disconnect', () => {
     console.log('client disconnected:', socket.id);

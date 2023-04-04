@@ -32,11 +32,11 @@ export default function Join({socket}) {
 	}
 
 	function createRoom() {
-		const roomIdNum = Math.floor(Math.random() * 100000) + 100000;
+		const roomIdNum = (Math.floor(Math.random() * 100000) + 100000).toString();
 		setPin(roomIdNum);
-		socket.emit('join', roomIdNum.toString());
-		socket.on('join', (data) => {
-			console.log(data);
+		socket.emit('join', roomIdNum, socket.id);
+		socket.on('join', (data, id) => {
+			console.log(id);
 		});
 	}
 
