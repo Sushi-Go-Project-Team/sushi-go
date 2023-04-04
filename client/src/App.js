@@ -9,7 +9,19 @@ import NewCode from "./pages/NewCode"
 import Results from "./pages/Results";
 import Login from "./pages/Login";
 import '../src/style.css'
+import '../src/modal.css'
 
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+} from '@chakra-ui/react'
 
 export default function App() {
   const socket = io.connect("http://localhost:4000")
@@ -17,6 +29,7 @@ export default function App() {
   socket.on('other-test-channel', (data) => {
     console.log('received socket data from server:', JSON.stringify(data));
   });
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <div className="App">
