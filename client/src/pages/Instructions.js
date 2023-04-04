@@ -1,9 +1,19 @@
 import React from "react"
+import {Link} from "react-router-dom"
+import Button from "react-bootstrap/Button"
 
 export default function Instructions() {
     return (
-        <div>
-            <h1>How to Play:</h1>
+        <div className="instructions">
+            <h1 className="instructions-heading">How to Play:</h1>
+            <p>The game takes place over 3 rounds. To start a round, all players simultaneously choose any 1 card from their hands that they would like to keep and will get placed face-down in front of them. When each player has done this, everyone reveals their chosen cards.</p>
+
+<p>After revealing each player’s cards, the remaining hand will be passed face-down to the player on your left. Everyone picks up their new hands and the next turn begins. You now have a new and smaller hand to choose from. Face-up cards remain with you until the end of the round, when they are scored. Once the final card is passed on, the scoring will begin.</p>
+
+<p>To score, each player adds up all the points from the face-up cards. Each card has a different number of points depending on how many of each card you have. The player can view the rules of each card by clicking on them during the game.</p>
+
+<p>Keep track of your scores from the previous round. A new round will begin and all the cards will be discarded. The only exceptions are Mochi cards which you keep in front of you to be scored at the end of the game. Every player will be handed 6 cards, equal to the amount from the last round.
+</p>
             {/* types of cards and flip them around to see point value and type and all8*/}
             <p>Displayed below are brief descriptions of the cards you'll use in this game. Check them out and get on with the game!</p>
             <p className="SoySauce">Soy Sauce Eggs</p> 
@@ -36,6 +46,8 @@ export default function Instructions() {
             
             <p className="Mochi">Mochi</p>
             <p className="mochiDesc">The player with the most mochi cards at the end of the game scores 6 points and the player with the least mochi cards will lose 6 points. If multiple people tie for first or last place, the points gained or lost will be split evenly among them. </p>
+
+            <Button className = "instructions-button"><Link to="/join" className = "button--link">Back to Join</Link></Button>
 
         </div>
     )
