@@ -1,27 +1,25 @@
 //make common deck for all users 
-
-import {Deck} from './Deck.js'
 class User {
-    static d = new Deck()
-    constructor(userID, cardsToPick, hand, numPuddings, leftUser, rightUser) {
+    constructor(userID, cardsToPick, numPuddings, leftUser, rightUser) {
         this.userID = userID;
         this.cardsToPick = cardsToPick;
-        this.hand = User.d.dealPlayerHand(hand);
+        this._hand = []
         this.numPuddings = numPuddings;
-        this.leftUser = leftUser;
-        this.rightUser = rightUser;
+        this._leftUser = leftUser;
+        this._rightUser = rightUser;
     }
     
     get leftUser() {
-        return this.leftUser
+        return this._leftUser
     }
 
     get rightUser() {
-        return this.rightUser
+        return this._rightUser
     }
  
     get hand() {
-        console.log(hand)
-        return hand
+        return this._hand
     }
 }
+
+export default User;
