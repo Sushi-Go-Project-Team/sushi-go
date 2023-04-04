@@ -1,4 +1,4 @@
-import React, { useState, useRef} from "react"
+import React, { useState, useRef, useEffect } from "react"
 import io from "socket.io-client"
 // import Form from "./components/UsernameForm";
 // import Chat from "./components/Chat";
@@ -13,73 +13,24 @@ import Results from "./pages/Results";
 import Login from "./pages/Login";
 import '../src/style.css'
 
-// const initialMessagesState = {
-//   general: [],
-//   random: [],
-//   jokes: [],
-//   javascript: []
-// };
-
-
-
 export default function App() {
-//   const [username, setUsername] = useState("");
-//   const [connected, setConnected] = useState(false);
-//   const [currentChat, setCurrentChat] = useState({isChannel: true, chatName: "general", receiverId: ""});
-//   const [connectedRooms, setConectedRooms] = useState(["general"]);
-//   const [allUsers, setAllUsers] = useState([]);
-//   const [messages, setMessages] = useState(initialMessagesState);
-//   const [message, setMessage] = useState("");
-//   const socketRef = useRef();
+  const [socket, setSocket] = useState(io.connect("http://localhost:4000"));
+  
+  useEffect(() => {
+    // send events to server
 
-// function handleMessageChange(e) {
-//   setMessage(e.target.value);
-// }
+    socket.emit('event1', {data: "some data"});
 
-// function sendMessage() {
-//   const payload = {
-//     content: message,
-//     to: currentChat.isChannel ? currentChat.chatNAme : currentChat.receiverId,
-//     sender: username,
-//     chatName: currentChat.chatName,
-//     isChannel: currentChat.isChannel
-//   };
-//   socketRef.current.emit("send message", payload);
-//   const newMessages = immer(messages, draft => {
-//     draft[currentChat.chatName].push({
-//       sender: username,
-//       content: message
-//     });
-//   });
-//   setMessages(newMessages);
-// }
-
-//   let body;
-//   if (connected) {
-//     body = (
-//       <Chat
-//         message = {message}
-//         handleMesageChange = {sendMessage}
-//         yourId = {socketRef.current ? socketRef.current.id : ""}
-//         allUsers = {allUsers}
-//         joinRoom = {joinRoom}
-//         connectedRooms = {connectedRooms}
-//         currentChat = {currentChat}
-//         toggleChat = {toggleChat}
-//         messages = {messages[currentChat.chatName]}
-//         />
-//     );
-//   } else {
-//     body = (
-//       <Form username = {username} onChange = {handleChange} connect = {connect}/>
-//     );
-//   }
-
-  const socket = io.connect("http://localhost:4000")
-  socket.emit('test-channel', "a test message")
-  socket.on('other-test-channel', (data) => {
-    console.log('received socket data from server:', JSON.stringify(data));
-  });
+    //handle events from server
+    socket.on('event1', (data) => {
+      console.log('received data:', JSON.stringify(data));
+    });
+    
+    // cleanup
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
 
   return (
     <div className="App">
