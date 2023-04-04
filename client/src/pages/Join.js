@@ -25,13 +25,19 @@ export default function Join({socket}) {
 
 	function joinRoom() {
 		const roomIdNum = code;
-		socket.emit('join', roomIdNum);
+		socket.emit('join', roomIdNum, socket.id);
+		socket.on('join', (data, id) => {
+			console.log(id);
+		});
 	}
 
 	function createRoom() {
 		const roomIdNum = Math.floor(Math.random() * 100000) + 100000;
 		setPin(roomIdNum);
 		socket.emit('join', roomIdNum.toString());
+		socket.on('join', (data) => {
+			console.log(data);
+		});
 	}
 
     return (
@@ -42,7 +48,7 @@ export default function Join({socket}) {
 	        <div className="center">
 		        <h2>Join Game</h2>
 	            <input type="text" placeholder="Game Pin" onChange = {handleChange}/>
-	            <button onClick = {joinRoom}><Link to="/landing">Enter</Link></button>
+	            <button onClick = {joinRoom}>Enter</button>
 	            <p>OR</p>
 	            <button onClick = {createRoom}><Link to="/landing">Create New</Link></button>
 				{pin != "" && <p>New Game Pin: {pin}</p>}

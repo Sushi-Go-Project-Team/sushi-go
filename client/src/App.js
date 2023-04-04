@@ -1,14 +1,10 @@
 import React, { useState, useRef, useEffect } from "react"
 import io from "socket.io-client"
-// import Form from "./components/UsernameForm";
-// import Chat from "./components/Chat";
-// import immer from "immer"
 import {Routes, Route} from "react-router-dom"
 import Card from "./components/Card"
 import Game from "./pages/Game"
 import Instructions from "./pages/Instructions"
 import Join from "./pages/Join"
-import NewCode from "./pages/NewCode"
 import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing"
