@@ -12,64 +12,117 @@ button {
 
 input[type=text] {
   background-color: #A8BA73;
-  color: #FEFAE0;
   padding: 10px 20px;
   border-radius: 24px;
   border: none;
   font-size: 16px;
+  margin: 10px;
+}
+
+::placeholder {
+  color: #FEFAE0;
 }
 
 .instructions {
     font-size: 20px;
     font-weight: bold;
-    padding: 200px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 100px;
+    padding-bottom: 150px;
     background-color: #FEFAE0;
 }
 
 .instructions-heading {
     text-align: center;
-    font-size: 120px;
+    font-size: 75px;
     font-family: Sniglet;
     margin: 0px;
     padding: 0px;
     color: #DD4B4B;
+}
+
+.instructions-button {
+  display: grid;
+  margin: auto;
+  margin-top: 75px;
 }
 
 .join {
     display: flex;
+    flex-direction: horizontal;
     align-items: center;
-    font-size: 50px;
     font-family: Sniglet;
     margin: 0px;
     padding: 0px;
-    color: #DD4B4B;
+}
+
+.join-text {
+  font-size: 24px;
+  font-weight: regular;
+  color: #BC6C25;
+}
+
+.join-or {
+  font-size: 24px;
+  font-weight: regular;
+  color: #000000;
+}
+
+.join-logout {
+  background-color: #FEFAE0;
+  color: #DD4B4B;
+}
+
+.join-div {
+  flex: 1;
 }
 
 .join-image {
+  margin-left: 100px;
   width: 500px;
 }
 
-.Results {
+.results {
     text-align: center;
+    font-family: Sniglet;
+    font-size: 50px;
+    color: #DD4B4B;
 }
 
-.Container {
+.container {
   display: grid;
   justify-content: center;
-  padding: 7px;
 }
 
-.Player  {
-    font-size:medium;
-    padding: 7px;
-    background-color: lightsalmon; 
+.player  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  padding: 0px;
+  margin-bottom: 20px;
+    font-family: Sniglet;
+    font-size: 24px;
+    color: black;
+    background-color: #B0BA73;
+    border-radius: 20px;
 }
 
-.Rematch {
-    border-radius: 10px;
-    font-size: 20px;
-    background-color: pink;  
-    font-weight: bold;  
+.player p {
+  padding: 0px;
+  margin: 0px 20px 0px 20px;
+}
+
+.rematch {
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+    background-color: #B0BA73;
+    text-align: center;
+    width: 150px;
 }
 
 .Card--deck {

@@ -42,17 +42,17 @@ export default function Join({socket}) {
 
     return (
         <div className="join">
-			<div>
+			<div className = "join-div">
 			<img src="images/join-logo.png" alt="logo" className="join-image"/>
 			</div>
-	        <div className="center">
-		        <h2>Join Game</h2>
+	        <div className="center join-div">
+		        <p className="join-text">Enter Game Room Pin:</p>
 	            <input type="text" placeholder="Game Pin" onChange = {handleChange}/>
 	            <button onClick = {joinRoom}>Enter</button>
-	            <p>OR</p>
+	            <p className="join-or">OR</p>
 	            <button onClick = {createRoom}><Link to="/landing">Create New</Link></button>
 				{pin != "" && <p>New Game Pin: {pin}</p>}
-				<button onClick={() => signOutUser()}> Logout </button>
+				<button className="join-logout" onClick={() => signOutUser()}> Logout </button>
             </div>
         </div>
     )
