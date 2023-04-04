@@ -5,7 +5,7 @@ import Modal from "../components/Modal.js"
 import { useState } from "react";
 import Button from "react-bootstrap/Button"
 
-export default function Game() {
+export default function Game(props) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
     return (
             <div className="GamePage">

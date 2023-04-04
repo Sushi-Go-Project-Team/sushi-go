@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import ResultPlayerCard from "./ResultPlayerCard"
 
-export default function Results() {
+export default function Results(props) {
     return (
         <div>
             <h1 className = "results">Results</h1>
