@@ -1,5 +1,5 @@
 //Have a count for how many cards there is in total
-import Card from "../../client/src/components/Card.js"
+import Card from "../client/src/components/Card.js"
 class Deck {
     static deck = []
     constructor() {

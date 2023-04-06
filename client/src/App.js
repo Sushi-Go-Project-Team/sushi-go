@@ -9,8 +9,8 @@ import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing"
 import '../src/style.css'
-import User from "../../server/Classes/User.js"
-import Deck from "../../server/Classes/Deck.js"
+import User from "../../server/Classes/user.js"
+import Deck from "../../server/deck.js"
 import '../src/modal.css'
 import {
   Modal,
@@ -52,8 +52,6 @@ export default function App() {
   const newDeck = new Deck()
 
   user1._hand = newDeck.dealPlayerHand()
-
-  //user1._hand.map((c) => console.log(c.name + " " + c.value))
 
 
   return (
