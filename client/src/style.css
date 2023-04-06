@@ -1,24 +1,128 @@
-.Results {
-    text-align: center;
+button {
+  background-color: #DD4B4B;
+  color: #FEFAE0;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 24px;
+  display: inline-block;
+  font-size: 16px
 }
 
-.Container {
+input[type=text] {
+  background-color: #A8BA73;
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: none;
+  font-size: 16px;
+  margin: 10px;
+}
+
+::placeholder {
+  color: #FEFAE0;
+}
+
+.instructions {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    background-color: #FEFAE0;
+}
+
+.instructions-heading {
+    text-align: center;
+    font-size: 75px;
+    font-family: Sniglet;
+    margin: 0px;
+    padding: 0px;
+    color: #DD4B4B;
+}
+
+.instructions-button {
+  display: grid;
+  margin: auto;
+  margin-top: 75px;
+}
+
+.join {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    font-family: Sniglet;
+    margin: 0px;
+    padding: 0px;
+}
+
+.join-text {
+  font-size: 24px;
+  font-weight: regular;
+  color: #BC6C25;
+}
+
+.join-or {
+  font-size: 24px;
+  font-weight: regular;
+  color: #000000;
+}
+
+.join-logout {
+  background-color: #FEFAE0;
+  color: #DD4B4B;
+}
+
+.join-div {
+  flex: 1;
+}
+
+.join-image {
+  margin-left: 100px;
+  width: 500px;
+}
+
+.results {
+    text-align: center;
+    font-family: Sniglet;
+    font-size: 50px;
+    color: #DD4B4B;
+}
+
+.container {
   display: grid;
   justify-content: center;
-  padding: 7px;
 }
 
-.Player  {
-    font-size:medium;
-    padding: 7px;
-    background-color: lightsalmon; 
+.player  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  padding: 0px;
+  margin-bottom: 20px;
+    font-family: Sniglet;
+    font-size: 24px;
+    color: black;
+    background-color: #B0BA73;
+    border-radius: 20px;
 }
 
-.Rematch {
-    border-radius: 10px;
-    font-size: 20px;
-    background-color: pink;  
-    font-weight: bold;  
+.player p {
+  padding: 0px;
+  margin: 0px 20px 0px 20px;
+}
+
+.rematch {
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+    background-color: #B0BA73;
+    text-align: center;
+    width: 150px;
 }
 
 .Card--deck {
@@ -27,14 +131,15 @@
 
 .GamePage {
   height: 700px;
+  background-color: #B0BA73;
 }
 
 .Card--name {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .Card--image {
-  width: 150px;
+width: 150px;
 }
 
 .Card--value {
@@ -66,7 +171,7 @@
   row-gap: 100px;
 }
 .Card--container>* {
-  flex: 1 1 748px;
+  flex: 1 1 740px;
 }
 body {
     background-color: #F9FFE9;
@@ -86,22 +191,22 @@ body {
     height: 100vh;
   }
   
-  .button {
+  /* .button {
     background-color: #FFD0C6;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     margin: 10px;
-  }
+  } */
   
-  input {
+  /* input {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
-  }
+  } */
   
   
  

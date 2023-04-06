@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Sushi-Go-Project-Team/sushi-go/issues"
   },
-  "homepage": "https://github.com/Sushi-Go-Project-Team/sushi-go#readme"
+  "homepage": "https://github.com/Sushi-Go-Project-Team/sushi-go#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "framer-motion": "^4.1.17"
+  }
 }
