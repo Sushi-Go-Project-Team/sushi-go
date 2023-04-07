@@ -36,7 +36,7 @@ io.on("connection", (socket) => {
     console.log(socketRooms.get(roomId));
   }
   socket.join(roomId);
-  io.to(roomId).emit('join', id);
+  io.to(roomId).emit('join', socketRooms.get(roomId).users);
 });
 
 // socket.on('switch-cards')
