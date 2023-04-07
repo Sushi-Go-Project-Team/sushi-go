@@ -30,7 +30,7 @@ io.on("connection", (socket) => {
   io.to(roomId).emit('join', id);
 });
 
-socket.on('switch-cards')
+// socket.on('switch-cards')
 
   socket.on('disconnect', () => {
     console.log('client disconnected:', socket.id);

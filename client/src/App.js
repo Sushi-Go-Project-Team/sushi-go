@@ -9,8 +9,7 @@ import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing"
 import '../src/style.css'
-import User from "../../server/user.js"
-import Deck from "./classes/deck.js"
+import Deck from "./classes/Deck.js"
 import '../src/modal.css'
 import {
   Modal,
@@ -48,13 +47,12 @@ export default function App() {
     };
   }, []);
 
-  let LU = new User(1, 2,3,0, null, null)
-  let RU = new User(5, 6, 6, 0, null, null)
+  // let LU = new User(1, 2,3,0, null, null)
+  // let RU = new User(5, 6, 6, 0, null, null)
 
-  let user1 = new User(133, 0, 3, LU, RU)
-  const newDeck = new Deck()
+  // let user1 = new User(133, 0, 3, LU, RU)
 
-  user1._hand = newDeck.dealPlayerHand()
+  // user1._hand = newDeck.dealPlayerHand()
 
 	function handleChange(event) {
         // const {name, value, type, checked} = event.target
@@ -76,13 +74,15 @@ export default function App() {
 		socket.on('join', (data, id) => {
 			console.log(id);
 		});
+    const newDeck = new Deck()
+  console.log(newDeck.dealPlayerHand());
 	}
 
   return (
     <div className="App">
-      {user1._hand.map((c, index) => (
+      {/* {user1._hand.map((c, index) => (
       <Card key = {index} image="images/GameCards.png" name={c.name} value={c.value} />)
-      )}
+      )} */}
     <Routes>
       <Route path="/game" element={<Game socket = {socket} />}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
