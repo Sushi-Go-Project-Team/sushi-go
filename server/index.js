@@ -19,17 +19,18 @@ io.on("connection", (socket) => {
   console.log("Connected & Socket Id is ", socket.id)
   
   // example for handling room-specific events
-  socket.on('event1', (data) => {
-    console.log(data);
-    io.to('room1').emit('event1', data);
-  });
+  // socket.on('event1', (data) => {
+  //   console.log(data);
+  //   io.to('room1').emit('event1', data);
+  // });
 
  // used to create/join room with room code
  socket.on('join', (roomId, id)=>{
   socket.join(roomId);
   io.to(roomId).emit('join', id);
-  
 });
+
+socket.on('switch-cards')
 
   socket.on('disconnect', () => {
     console.log('client disconnected:', socket.id);
@@ -138,7 +139,7 @@ while (nori > 0) {
     nori--;
   }
 }
-return points;
+  return points;
 }
 
 /* GET home page. */
