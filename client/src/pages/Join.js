@@ -7,7 +7,7 @@ import {createClient} from '@supabase/supabase-js';
 
 const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_ANON_KEY);
 
-export default function Join({socket, handleChange, joinRoom, createRoom}) {
+export default function Join({socket, handleChange, handleNameChange, joinRoom, createRoom}) {
 	const navigate = useNavigate();
 
 	async function signOutUser() {
@@ -21,6 +21,8 @@ export default function Join({socket, handleChange, joinRoom, createRoom}) {
 			<img src="images/join-logo.png" alt="logo" className="join-image"/>
 			</div>
 	        <div className="center join-div">
+				<p className="join-text">Enter Name:</p>
+	            <input type="text" placeholder="John Doe" onChange = {handleNameChange}/>
 		        <p className="join-text">Enter Game Room Pin:</p>
 	            <input type="text" placeholder="Game Pin" onChange = {handleChange}/>
 	            <button onClick = {joinRoom}><Link to="/landing">Enter</Link></button>

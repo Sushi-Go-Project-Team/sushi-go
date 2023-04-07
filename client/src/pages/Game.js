@@ -5,8 +5,39 @@ import Modal from "../components/Modal.js"
 import { useState } from "react";
 import Button from "react-bootstrap/Button"
 
-export default function Game(props) {
+export default function Game({socket, user}) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
+    const pickedCards = user.cardsPicked.map((card) => {
+        switch(card) {
+            case "SSE":
+              return <img src="images/card-soy-sauce-egg.png" className="game--card" />;
+            case "BC":
+            return <img src="images/card-bok-choy.png" className="game--card" />;
+            case "Gy":
+                return <img src="images/card-gyoza.png" className="game--card"/>;
+            case "Na-1":
+                return <img src="images/card-narutomaki-1.png" className="game--card" />;
+            case "Na-2":
+                return <img src="images/card-narutomaki-2.png" className="game--card" />;
+            case "Na-3":
+                return <img src="images/card-narutomaki-3.png" className="game--card" />;
+            case "Ton":
+                return <img src="images/card-tonkatsu-ramen.png" className="game--card" />;
+            case "Tof":
+                return <img src="images/card-tofu-ramen.png" className="game--card"/>;
+            case "Spi":
+                return <img src="images/card-spicy-ramen.png" className="game--card"/>;
+            case "Moc":
+                return <img src="images/card-mochi.png" className="game--card"/>;
+            case "Nor":
+                return <img src="images/card-nori.png" className="game--card"/>;
+            case "Cho":
+                return <img src="images/card-chopsticks.png" className="game--card"/>;
+            default:
+              break;
+          }
+    });
+
     return (
             <div className="GamePage">
                 <h1>Game</h1>
@@ -19,9 +50,7 @@ export default function Game(props) {
                 {openModal && <Modal closeModal={setOpenModal}/>}
                 <div className="Card--container">
                 <div className="Card--setOne">
-                    <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
-                    <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
-                    <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
+                    {pickedCards}
                     <div className="Card--deck">
                         <Card name="Deck 1" image="images/card-back.png" value="14"/>   
                     </div>

@@ -4,7 +4,7 @@ import PlayerCard from '../components/PlayerCard';
 
 const Landing = ({socket, code, players}) => {
   const users = players.map((player) => {
-    return <PlayerCard user={player} />
+    return <PlayerCard user={player.name} />
   });
 
   return (
