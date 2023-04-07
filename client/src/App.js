@@ -75,7 +75,7 @@ export default function App() {
 			console.log(id);
 		});
     const newDeck = new Deck()
-  console.log(newDeck.dealPlayerHand());
+    console.log(newDeck.dealPlayerHand());
 	}
 
   return (

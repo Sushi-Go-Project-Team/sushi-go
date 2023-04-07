@@ -1,17 +1,21 @@
 //Have a count for how many cards there is in total
 class Deck {
-    static deck = ["SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE",
-    "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC",
-    "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy",
-    "Na-1", "Na-1", "Na-1", "Na-1", "Na-1", "Na-1",
-    "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2",
-    "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", 
-    "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", 
-    "Tof", "Tof", "Tof", "Tof", "Tof", 
-    "Spi", "Spi", "Spi", "Spi", "Spi",
-    "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc",
-    "Nor", "Nor", "Nor", "Nor", "Nor", "Nor", 
-    "Cho", "Cho", "Cho", "Cho"];
+    static deck = [];
+
+    constructor() {
+        this.deck = ["SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE",
+        "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC",
+        "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy",
+        "Na-1", "Na-1", "Na-1", "Na-1", "Na-1", "Na-1",
+        "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2",
+        "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", 
+        "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", 
+        "Tof", "Tof", "Tof", "Tof", "Tof", 
+        "Spi", "Spi", "Spi", "Spi", "Spi",
+        "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc",
+        "Nor", "Nor", "Nor", "Nor", "Nor", "Nor", 
+        "Cho", "Cho", "Cho", "Cho"];
+    }
     
     // set addCard(Card()) {
     //     deck.append(Card())
