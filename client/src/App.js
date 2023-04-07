@@ -8,8 +8,8 @@ import Join from "./pages/Join"
 import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing"
+import User from "./classes/User"
 import '../src/style.css'
-import Deck from "./classes/Deck.js"
 import '../src/modal.css'
 import {
   Modal,
@@ -30,6 +30,19 @@ export default function App() {
   const [code, setCode] = useState("");
   const [player, setPlayer] = useState(null);
   const [players, setPlayers] = useState(["John", "Bob", "Mary"]);
+
+  const deck = ["SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE", "SSE",
+    "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC", "BC",
+    "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy", "Gy",
+    "Na-1", "Na-1", "Na-1", "Na-1", "Na-1", "Na-1",
+    "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2", "Na-2",
+    "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", "Na-3", 
+    "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", "Ton", 
+    "Tof", "Tof", "Tof", "Tof", "Tof", 
+    "Spi", "Spi", "Spi", "Spi", "Spi",
+    "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc", "Moc",
+    "Nor", "Nor", "Nor", "Nor", "Nor", "Nor", 
+    "Cho", "Cho", "Cho", "Cho"];
   
   useEffect(() => {
     //create socket connection
@@ -47,12 +60,30 @@ export default function App() {
     };
   }, []);
 
-  // let LU = new User(1, 2,3,0, null, null)
-  // let RU = new User(5, 6, 6, 0, null, null)
+  function dealPlayerHand() {
+    //at start of game deal 7 random cards to each User
+    let deckCopy = [...deck];
+    let userHand = [];
+    for (let i = 0; i < 8; i++) {
+        let randIdx = Math.floor(Math.random() * deckCopy.length);
+        let randC = deckCopy.splice(randIdx, 1);
+        userHand.push(randC[0]);
+    }
+    return userHand;
+  }
 
-  // let user1 = new User(133, 0, 3, LU, RU)
-
-  // user1._hand = newDeck.dealPlayerHand()
+  function createUser() {
+    const hand = dealPlayerHand();
+    const user = {
+        name: "John",
+        cardsPicked: [],
+        currentHand: hand,
+        puddings: 0,
+        leftUser: null,
+        rightUser: null
+    }
+    setPlayer(user);
+  }
 
 	function handleChange(event) {
         // const {name, value, type, checked} = event.target
@@ -61,6 +92,8 @@ export default function App() {
 
 	function joinRoom() {
 		const roomIdNum = code;
+    createUser();
+    console.log(player);
 		socket.emit('join', roomIdNum, socket.id);
 		socket.on('join', (data, id) => {
 			console.log(id);
@@ -70,12 +103,12 @@ export default function App() {
 	function createRoom() {
 		const roomIdNum = (Math.floor(Math.random() * 100000) + 100000).toString();
 		setCode(roomIdNum);
+    createUser();
+    console.log(player);
 		socket.emit('join', roomIdNum, socket.id);
 		socket.on('join', (data, id) => {
 			console.log(id);
 		});
-    const newDeck = new Deck()
-    console.log(newDeck.dealPlayerHand());
 	}
 
   return (
