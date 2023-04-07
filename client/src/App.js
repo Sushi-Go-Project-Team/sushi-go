@@ -98,10 +98,9 @@ export default function App() {
 
 	function joinRoom() {
 		const roomIdNum = code;
-    createUser();
-		socket.emit('join', roomIdNum, socket.id);
+    const user = createUser();
+		socket.emit('join', roomIdNum, socket.id, user);
 		socket.on('join', (data, id) => {
-      const user = createUser();
       setPlayer(user);
       setPlayers((prevPlayers) => [...prevPlayers, user]);
 		});
@@ -110,9 +109,9 @@ export default function App() {
 	function createRoom() {
 		const roomIdNum = (Math.floor(Math.random() * 100000) + 100000).toString();
 		setCode(roomIdNum);
-		socket.emit('join', roomIdNum, socket.id);
+    const user = createUser();
+		socket.emit('join', roomIdNum, socket.id, user);
 		socket.on('join', (data, id) => {
-      const user = createUser();
       setPlayer(user);
       setPlayers((prevPlayers) => [...prevPlayers, user]);
 		});

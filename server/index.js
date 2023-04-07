@@ -5,11 +5,13 @@ app.use(cors())
 app.use(express.json())
 var router = express.Router()
 
+const socketRooms = new Map();
+
 const server = app.listen(4000, () => {
   console.log('Server is running on port 4000!')
 });
 
-io = require('socket.io')(server, {
+const io = require('socket.io')(server, {
   cors:{
     origin:"*"
   }
@@ -25,7 +27,14 @@ io.on("connection", (socket) => {
   // });
 
  // used to create/join room with room code
- socket.on('join', (roomId, id)=>{
+ socket.on('join', (roomId, id, user)=>{
+  if (!socketRooms.has(roomId)) {
+    socketRooms.set(roomId, {users: [user]})
+    console.log(socketRooms.get(roomId));
+  } else {
+    socketRooms.get(roomId).users = [...socketRooms.get(roomId).users, user];
+    console.log(socketRooms.get(roomId));
+  }
   socket.join(roomId);
   io.to(roomId).emit('join', id);
 });
@@ -36,14 +45,6 @@ io.on("connection", (socket) => {
     console.log('client disconnected:', socket.id);
   });
 })
-
-io.of("/").adapter.on('created-room', (room) => {
-  console.log(`room ${room} was created`);
-});
-
-io.of("/").adapter.on('joined-room', (room, id) => {
-  console.log(`socket ${id} has joined room ${room}`);
-});
 
 
 function sumPointTotal(array) {
