@@ -9,8 +9,8 @@ import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing"
 import '../src/style.css'
-import User from "../../server/Classes/user.js"
-import Deck from "../../server/deck.js"
+import User from "../../server/user.js"
+import Deck from "./classes/deck.js"
 import '../src/modal.css'
 import {
   Modal,
