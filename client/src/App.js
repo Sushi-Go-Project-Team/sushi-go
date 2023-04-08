@@ -8,6 +8,7 @@ import Join from "./pages/Join"
 import Results from "./pages/Results";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing"
+import { createBrowserHistory } from 'history';
 import '../src/style.css'
 import '../src/modal.css'
 import {
@@ -43,6 +44,8 @@ export default function App() {
   const [name, setName] = useState("");
   const [player, setPlayer] = useState(null);
   const [players, setPlayers] = useState([]);
+
+  const history = createBrowserHistory();
   
   useEffect(() => {
     //create socket connection
@@ -119,7 +122,7 @@ export default function App() {
 
   return (
     <div className="App">
-    <Routes>
+    <Routes history = {history}>
       <Route path="/game" element={<Game 
         socket = {socket}
         user = {player} />}></Route>
@@ -138,7 +141,7 @@ export default function App() {
         socket = {socket}
         code = {code} 
         players = {players} />}></Route>
-      <Route path="/" element={<Login />}></Route>
+      <Route exact path="/" element={<Login />}></Route>
     </Routes>
     </div>
   );
