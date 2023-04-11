@@ -9,9 +9,11 @@ export default function Game({socket, user, users}) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
     
     let otherHand;
+    let otherName;
     for (let i = 0; i < users.length; i++) {
         if (users[i].name !== user.name) {
             otherHand = users[i].currentHand;
+            otherName = users[i].name;
             break;
         }
     }
@@ -89,21 +91,23 @@ export default function Game({socket, user, users}) {
                 {openModal && <Modal closeModal={setOpenModal}/>}
                 <div className="Card--container">
                 <div className="Card--setOne">
+                    <h2>{user.name}</h2>
                     {pickedCards}
-                    <div className="Card--deck">
+                    {/* <div className="Card--deck">
                         <Card name="Deck 1" image="images/card-back.png" value="14"/>   
-                    </div>
+                    </div> */}
                 </div>
                 <div className="Card--setTwo">
+                    <h2>{otherName}</h2>
                     {otherCards}
-                    <div className="Card--deck">
+                    {/* <div className="Card--deck">
                         <Card name="Deck 1" image="images/card-back.png" value="14"/>   
                     </div>
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
-                    <Card id="deck2" className="Card--image" title="Deck 2" image="images/card-back.png" value="14"/>
+                    <Card id="deck2" className="Card--image" title="Deck 2" image="images/card-back.png" value="14"/> */}
                 </div>
-                <div className="Card--setThree">
+                {/* <div className="Card--setThree">
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
@@ -117,7 +121,7 @@ export default function Game({socket, user, users}) {
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
                     <Card className="Card--image" name="Soy Sauce Eggs" image="images/card-back.png" value="14"/>
                     <Card id="deck4" className="Card--image" name="Deck 4" image="images/card-back.png" value="14"/>
-                </div>
+                </div> */}
             </div>
             <Button><Link to="/results" className = "button--link">End Game!</Link></Button>
             </div>
