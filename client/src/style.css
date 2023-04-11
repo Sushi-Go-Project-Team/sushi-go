@@ -1,3 +1,7 @@
+body {
+  margin: 0px;
+}
+
 button {
   background-color: #DD4B4B;
   color: #FEFAE0;
@@ -136,8 +140,9 @@ input[type=text] {
 }
 
 .GamePage {
-  padding: 0px;
+  margin: 0px;
   background-color: #B0BA73;
+  overflow: auto;
 }
 
 .Card--name {
