@@ -125,7 +125,8 @@ export default function App() {
     <Routes history = {history}>
       <Route path="/game" element={<Game 
         socket = {socket}
-        user = {player} />}></Route>
+        user = {player}
+        users = {players} />}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join 
         socket = {socket}

@@ -5,9 +5,48 @@ import Modal from "../components/Modal.js"
 import { useState } from "react";
 import Button from "react-bootstrap/Button"
 
-export default function Game({socket, user}) {
+export default function Game({socket, user, users}) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
+    
+    let otherHand;
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].name !== user.name) {
+            otherHand = users[i].currentHand;
+            break;
+        }
+    }
     const pickedCards = user.currentHand.map((card) => {
+        switch(card) {
+            case "SSE":
+                return <img src="images/card-soy-sauce-egg.jpg" className="game--card" />;
+            case "BC":
+                return <img src="images/card-bok-choy.jpg" className="game--card" />;
+            case "Gy":
+                return <img src="images/card-gyoza.jpg" className="game--card"/>;
+            case "Na-1":
+                return <img src="images/card-narutomaki-1.jpg" className="game--card" />;
+            case "Na-2":
+                return <img src="images/card-narutomaki-2.jpg" className="game--card" />;
+            case "Na-3":
+                return <img src="images/card-narutomaki-3.jpg" className="game--card" />;
+            case "Ton":
+                return <img src="images/card-tonkatsu-ramen.jpg" className="game--card" />;
+            case "Tof":
+                return <img src="images/card-tofu-ramen.jpg" className="game--card"/>;
+            case "Spi":
+                return <img src="images/card-spicy-ramen.jpg" className="game--card"/>;
+            case "Moc":
+                return <img src="images/card-mochi.jpg" className="game--card"/>;
+            case "Nor":
+                return <img src="images/card-nori.jpg" className="game--card"/>;
+            case "Cho":
+                return <img src="images/card-chopsticks.jpg" className="game--card"/>;
+            default:
+              break;
+          }
+    });
+
+    const otherCards = otherHand.map((card) => {
         switch(card) {
             case "SSE":
                 return <img src="images/card-soy-sauce-egg.jpg" className="game--card" />;
@@ -56,6 +95,7 @@ export default function Game({socket, user}) {
                     </div>
                 </div>
                 <div className="Card--setTwo">
+                    {otherCards}
                     <div className="Card--deck">
                         <Card name="Deck 1" image="images/card-back.png" value="14"/>   
                     </div>
