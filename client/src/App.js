@@ -44,6 +44,7 @@ export default function App() {
   const [name, setName] = useState("");
   const [player, setPlayer] = useState(null);
   const [players, setPlayers] = useState([]);
+  const [results, setResults] = useState([]);
 
   const history = createBrowserHistory();
   
@@ -120,13 +121,26 @@ export default function App() {
 		});
 	}
 
+  function endGame() {
+    socket.emit('end-game', code);
+    socket.on('winner', (name1, score1, name2,  score2) => {
+      const resultNames = [name1, name2];
+      const resultScores = [score1, score2];
+      console.log(resultNames);
+      console.log(resultScores);
+      setResults([name1, score1, name2, score2]);
+      console.log(results)
+    });
+  }
+
   return (
     <div className="App">
     <Routes history = {history}>
       <Route path="/game" element={<Game 
         socket = {socket}
         user = {player}
-        users = {players} />}></Route>
+        users = {players}
+        endGame = {endGame} />}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join 
         socket = {socket}
@@ -137,7 +151,8 @@ export default function App() {
         createRoom = {createRoom} />}></Route>
       <Route path="/results" element={<Results 
         socket = {socket}
-        user = {player} />}></Route>
+        user = {player}
+        results = {results} />}></Route>
       <Route path="/landing" element={<Landing 
         socket = {socket}
         code = {code} 

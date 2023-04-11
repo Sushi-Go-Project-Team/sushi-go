@@ -6,6 +6,7 @@ app.use(express.json())
 var router = express.Router()
 
 const socketRooms = new Map();
+let picked = 0;
 
 const server = app.listen(4000, () => {
   console.log('Server is running on port 4000!')
@@ -39,6 +40,30 @@ io.on("connection", (socket) => {
   io.to(roomId).emit('join', socketRooms.get(roomId).users);
 });
 
+socket.on('pick-card', (roomId, card) => {
+    picked++;
+    if (picked % 2 === 0) {
+      io.to(roomId).emit('new-round');
+    }
+});
+
+socket.on('end-game', (roomId) => {
+  console.log(roomId);
+  console.log(socketRooms);
+  console.log(socketRooms.get(roomId));
+  const players = socketRooms.get(roomId).users
+  const score1 = sumPointTotal(players[0].currentHand);
+  console.log(players[0].currentHand)
+  const score2 = sumPointTotal(players[1].currentHand);
+  console.log(score1);
+  console.log(score2);
+  if (score1 >= score2) {
+    socket.emit('winner', players[0].name, score1, players[1].name, score2);
+  } else if (score1 < score2) {
+    socket.emit('winner', players[1].name, score2, players[0].name, score1);
+  }
+});
+
 // socket.on('switch-cards')
 
   socket.on('disconnect', () => {
@@ -47,7 +72,7 @@ io.on("connection", (socket) => {
 })
 
 
-function sumPointTotal(array) {
+function sumPointTotal(cardArray) {
   points = 0;
   eggs = 0; //x2 = 5
   bokChoy = 0; //x3 = 10
@@ -62,39 +87,39 @@ function sumPointTotal(array) {
 
   
 
-for (i = 0; i < array.length; i++) {
-  switch(i) {
-    case "Soy Sauce Eggs":
+for (let i = 0; i < cardArray.length; i++) {
+  switch(cardArray[i]) {
+    case "SSE":
       eggs++;
     break;
-    case "Bok Choy":
+    case "BC":
       bokChoy++;
     break;
-    case "Gyoza":
+    case "Gy":
       gyoza++;
     break;
-    case "Narutomaki 1":
+    case "Nar-1":
       maki++;
     break;
-    case "Narutomaki 2":
+    case "Nar-2":
       maki += 2;
     break;
-    case "Narutomaki 3":
+    case "Nar-3":
       maki += 3;
     break;
-    case "Tonkatsu Ramen":
+    case "Ton":
       tonkatsu++;
     break;
-    case "Tofu Ramen":
+    case "Tof":
       tofu++;
     break;
-    case "Spicy Ramen":
+    case "Spi":
       spicy++;
     break;
-    case "Mochi":
+    case "Moc":
       mochi++;
     break;
-    case "Nori":
+    case "Nor":
       nori++;
     break;
     default:

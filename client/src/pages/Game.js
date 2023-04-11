@@ -5,7 +5,7 @@ import Modal from "../components/Modal.js"
 import { useState } from "react";
 import Button from "react-bootstrap/Button"
 
-export default function Game({socket, user, users}) {
+export default function Game({socket, user, users, endGame}) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
     
     let otherHand;
@@ -123,7 +123,7 @@ export default function Game({socket, user, users}) {
                     <Card id="deck4" className="Card--image" name="Deck 4" image="images/card-back.png" value="14"/>
                 </div> */}
             </div>
-            <Button><Link to="/results" className = "button--link">End Game!</Link></Button>
+            <button onClick={endGame}><Link to="/results" className = "button--link">End Game!</Link></button>
             </div>
     )
 }
