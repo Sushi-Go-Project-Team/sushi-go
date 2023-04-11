@@ -133,6 +133,10 @@ export default function App() {
     });
   }
 
+  function pickCard() {
+      console.log("picked a card!");
+  }
+
   return (
     <div className="App">
     <Routes history = {history}>
@@ -140,7 +144,8 @@ export default function App() {
         socket = {socket}
         user = {player}
         users = {players}
-        endGame = {endGame} />}></Route>
+        endGame = {endGame}
+        pickCard = {pickCard} />}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join 
         socket = {socket}
