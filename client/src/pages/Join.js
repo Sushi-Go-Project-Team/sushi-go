@@ -22,7 +22,7 @@ export default function Join({socket, handleChange, handleNameChange, joinRoom, 
 			</div>
 	        <div className="center join-div">
 				<p className="join-text">Enter Name:</p>
-	            <input type="text" placeholder="John Doe" onChange = {handleNameChange}/>
+	            <input type="text" placeholder="George P. Burdell" onChange = {handleNameChange}/>
 		        <p className="join-text">Enter Game Room Pin:</p>
 	            <input type="text" placeholder="Game Pin" onChange = {handleChange}/>
 	            <button onClick = {joinRoom}><Link to="/landing">Enter</Link></button>
