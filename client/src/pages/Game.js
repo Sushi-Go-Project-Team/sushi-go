@@ -88,7 +88,7 @@ export default function Game({socket, user, users, endGame}) {
                     >
                         Open
                 </button> 
-                {openModal && <Modal closeModal={setOpenModal}/>}
+                {openModal && <Modal closeModal={setOpenModal} cards={user.currentHand}/>}
                 <div className="Card--container">
                 <div className="Card--setOne">
                     <h2>{user.name}</h2>
