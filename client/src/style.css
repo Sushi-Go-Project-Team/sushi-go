@@ -125,12 +125,18 @@ input[type=text] {
     width: 150px;
 }
 
+.game--card {
+  width: 150px;
+  height: 250px;
+  margin: 10px;
+}
+
 .Card--deck {
  margin: 20px;
 }
 
 .GamePage {
-  height: 700px;
+  padding: 0px;
   background-color: #B0BA73;
 }
 
