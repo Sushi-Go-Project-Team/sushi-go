@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import PlayerCard from '../components/PlayerCard';
+import LoadPlayerRow from './LoadPlayer';
 
 const Landing = ({socket, code, players}) => {
   const users = players.map((player) => {
@@ -9,9 +10,14 @@ const Landing = ({socket, code, players}) => {
 
   return (
     <div>
-        <h1>Room Code: {code}</h1>
-        {users}
-        <button><Link to="/game">Start Game!</Link></button>
+        <h1 className = "gameLogo"> Ramen GO!</h1>
+        <div className = "loadContainer">
+          <h1 className = "gamePin"> GAME PIN: {code}</h1>
+          <LoadPlayerRow firstName = "Player 1"  secondName = "Player 2" />
+          <LoadPlayerRow firstName = "Player 3" secondName = "Player 4" />
+            <button id = "startBtn"><Link id= "startBtn" to="/game">Start Game!</Link></button>
+          {users}
+        </div>
     </div>
   )
 }
