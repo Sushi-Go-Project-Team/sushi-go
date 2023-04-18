@@ -9,9 +9,10 @@ button {
   border: none;
   text-align: center;
   text-decoration: none;
-  border-radius: 24px;
+  border-radius: 30px;
   display: inline-block;
-  font-size: 16px
+  margin-top: 15px;
+  font-size: 20px;
 }
 
 input[type=text] {
@@ -45,6 +46,63 @@ input[type=text] {
     padding: 0px;
     color: #DD4B4B;
 }
+
+.gameLogo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 40px;
+  margin-bottom: 8px;
+  margin-left: 24px;
+  color: #DD4B4B;
+  font-family: Sniglet;
+}
+
+.gamePin {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 60px;
+  color: #B0BA73;
+  font-family: Sniglet;
+  transform: scale(1,1.3);
+}
+
+.loadContainer {
+  text-align: center;
+  margin-top: 200px;
+}
+
+.playerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.loadPlayer {
+  text-align: center;
+  width: 210px;
+  padding: 11px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  font-family: Sniglet;
+  font-size: 32px;
+  background-color: #B0BA73;
+  border-radius: 30px;
+}
+
+#startBtn {
+  padding: 15px;
+  margin-top: 70px;
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.Link {
+  text-decoration: none;
+}
+
 
 .instructions-button {
   display: grid;
@@ -87,6 +145,14 @@ input[type=text] {
   width: 500px;
 }
 
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  margin-top: 55px;
+  margin-left: 55px;
+
+}
+
 .results {
     text-align: center;
     font-family: Sniglet;
@@ -124,9 +190,9 @@ input[type=text] {
   margin-top: 50px;
   padding-top: 15px;
   padding-bottom: 15px;
-    background-color: #B0BA73;
-    text-align: center;
-    width: 150px;
+  background-color: #B0BA73;
+  text-align: center;
+  width: 150px;
 }
 
 .game--card {
