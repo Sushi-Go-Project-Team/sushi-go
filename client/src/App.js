@@ -134,7 +134,10 @@ export default function App() {
   }
 
   function pickCard() {
-      console.log("picked a card!");
+		socket.emit('picked-card', code, socket.id, player);
+		socket.on('join', (users) => {
+      setPlayers(users);
+		});
   }
 
   return (

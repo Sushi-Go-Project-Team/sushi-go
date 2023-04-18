@@ -17,6 +17,7 @@ export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPla
             cardsPicked: [...cardsPicked, card],
             currentHand: cards
         }));
+        pickCard();
         // // Add clicked card to pickedCards array
         // setChosenCards([...chosenCards, card]);
         // // Check if the previously clicked card matches the current card

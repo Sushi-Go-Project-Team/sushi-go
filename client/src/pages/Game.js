@@ -11,7 +11,7 @@ export default function Game({socket, user, users, endGame, pickCard, setPlayer}
     let otherName;
     for (let i = 0; i < users.length; i++) {
         if (users[i].name !== user.name) {
-            otherHand = users[i].currentHand;
+            otherHand = users[i].cardsPicked;
             otherName = users[i].name;
             break;
         }
@@ -88,7 +88,13 @@ export default function Game({socket, user, users, endGame, pickCard, setPlayer}
                     >
                         Open
                 </button> 
-                {openModal && <Modal closeModal={setOpenModal} cards={user.currentHand} cardsPicked={user.cardsPicked} pickCard={pickCard} setPlayer={setPlayer} />}
+                {openModal && <Modal 
+                closeModal={setOpenModal} 
+                cards={user.currentHand} 
+                cardsPicked={user.cardsPicked} 
+                pickCard={pickCard} 
+                setPlayer={setPlayer}
+                socket={socket} />}
                 <div className="Card--container">
                 <div className="Card--setOne">
                     <h2>{user.name}</h2>
