@@ -13,6 +13,7 @@ button {
   display: inline-block;
   margin-top: 15px;
   font-size: 20px;
+  color: white;
 }
 
 input[type=text] {
@@ -69,7 +70,7 @@ input[type=text] {
 
 .loadContainer {
   text-align: center;
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 .playerRow {
@@ -101,6 +102,11 @@ input[type=text] {
 
 .Link {
   text-decoration: none;
+}
+
+.button--link {
+  text-decoration: none;
+  color: white;
 }
 
 
@@ -250,9 +256,10 @@ width: 150px;
 .Card--container>* {
   flex: 1 1 740px;
 }
+
 body {
     background-color: #F9FFE9;
-  }
+}
   
   .banner {
     background-color: #FFD0C6;

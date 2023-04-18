@@ -25,9 +25,9 @@ export default function Join({socket, handleChange, handleNameChange, joinRoom, 
 	            <input type="text" placeholder="George P Burdell" onChange = {handleNameChange}/>
 		        <p className="join-text">Enter Game Room Pin:</p>
 	            <input type="text" placeholder="Game Pin" onChange = {handleChange}/>
-	            <button onClick = {joinRoom}><Link to="/landing">Enter</Link></button>
+	            <button onClick = {joinRoom}><Link className = "button--link" to="/landing">Enter</Link></button>
 	            <p className="join-or">OR</p>
-	            <button onClick = {createRoom}><Link to="/landing">Create New</Link></button>
+	            <button onClick = {createRoom}><Link  className = "button--link" to="/landing">Create New</Link></button>
 				{/* {pin != "" && <p>New Game Pin: {pin}</p>} */}
 				<button className="join-logout" onClick={() => signOutUser()}> Logout </button>
             </div>
