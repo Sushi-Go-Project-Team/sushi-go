@@ -5,7 +5,7 @@ import Modal from "../components/Modal.js"
 import { useState } from "react";
 import Button from "react-bootstrap/Button"
 
-export default function Game({socket, user, users, endGame, pickCard, setPlayer, player, setPlayers, players, code }) {
+export default function Game({socket, user, users, endGame, pickCard, setPlayer, player, setPlayers, players, code, cardClick }) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
 
     useEffect(() => {
@@ -112,7 +112,8 @@ export default function Game({socket, user, users, endGame, pickCard, setPlayer,
         setPlayers = {setPlayers}
         players = {players}
         socket={socket}
-        code = {code} />}
+        code = {code}
+        cardClick = {cardClick} />}
                 <div className="Card--container">
                 <div className="card--set card--set-1">
                     <h2>{user.name}'s Cards</h2>

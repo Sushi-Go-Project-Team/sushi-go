@@ -118,6 +118,47 @@ export default function App() {
 		});
 	}
 
+  function cardClick(card) {
+    let cards = player.currentHand;
+    pickCard();
+    const index = cards.findIndex(c => c === card);
+    cards.splice(index, 1);
+    setPlayer((prevPlayer) => ({
+        ...prevPlayer,
+        cardsPicked: [...prevPlayer.cardsPicked, card],
+        currentHand: cards
+    }));
+    socket.emit('picked-card', code, player.name, card, cards);
+    socket.on('picked-card', (users) => {
+      setPlayers(users);
+		});
+    // socket.on('updated-card', (users) => {
+    //     setPlayers(users);
+    // });
+    // , () => {
+    //     console.log(player);
+    //     socket.emit('picked-card', code, player);
+    //   });
+    // // Add clicked card to pickedCards array
+    // setChosenCards([...chosenCards, card]);
+    // // Check if the previously clicked card matches the current card
+    // if (prevCard !== null && prevCard.id !== card.id && prevCard.pairWith.includes(card.id)) {
+    //     if (prevCard.image === card.image) {
+    //         // Cards match, add to matchedCards array
+    //         setPairs([...pairs, prevCard, card]);
+    //         setPrevCard(null);
+    //     } else {
+    //         // Cards don't match, reset pickedCards array
+    //         setTimeout(() => {
+    //             setChosenCards([]);
+    //             setPrevCard(null);
+    //         }, 1000);
+    //     }
+    // } else if (prevCard ) {
+    //     setPrevCard(card);
+    // }
+};
+
   function endGame() {
     socket.emit('end-game', code);
     socket.on('winner', (name1, score1, name2,  score2) => {
@@ -131,7 +172,7 @@ export default function App() {
   }
 
   function pickCard() {
-		
+    
   }
 
   return (
@@ -147,7 +188,8 @@ export default function App() {
         player = {player}
         setPlayers = {setPlayers}
         players = {players}
-        code = {code}/>}></Route>
+        code = {code}
+        cardClick = {cardClick}/>}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join 
         socket = {socket}

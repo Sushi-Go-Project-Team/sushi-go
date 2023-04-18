@@ -7,6 +7,8 @@ var router = express.Router()
 
 const socketRooms = new Map();
 let picked = 0;
+let p1Ready = false;
+let p2Ready = false;
 
 const server = app.listen(4000, () => {
   console.log('Server is running on port 4000!')
@@ -51,8 +53,27 @@ socket.on('picked-card', (code, name, card, cards) => {
       console.log(socketRooms.get(code).users[i].currentHand);
     }
   }
-  socket.emit('updated-card', socketRooms.get(code).users);
+  socket.emit('picked-card', socketRooms.get(code).users);
 })
+
+socket.on('ready', (code, player) => {
+  let users = socketRooms.get(code).users;
+  console.log("in the ready function")
+  if (player.name == users[0].name) {
+    p1Ready = true;
+  } else {
+    p2Ready = true;
+  }
+  if (p1Ready && p2Ready) {
+    const temp = users[0].currentHand;
+    users[0].currentHand = users[1].currentHand;
+    users[1].currentHand = temp;
+    p1Ready = false;
+    p2Ready = false;
+    console.log(users)
+    socket.emit('ready', users);
+  }
+});
 
 socket.on('end-game', (roomId) => {
   console.log(roomId);
