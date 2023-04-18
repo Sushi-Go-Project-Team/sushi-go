@@ -31,21 +31,29 @@ io.on("connection", (socket) => {
  socket.on('join', (roomId, id, user)=>{
   if (!socketRooms.has(roomId)) {
     socketRooms.set(roomId, {users: [user]})
-    console.log(socketRooms.get(roomId));
+    // console.log(socketRooms.get(roomId));
   } else {
     socketRooms.get(roomId).users = [...socketRooms.get(roomId).users, user];
-    console.log(socketRooms.get(roomId));
+    // console.log(socketRooms.get(roomId));
   }
   socket.join(roomId);
   io.to(roomId).emit('join', socketRooms.get(roomId).users);
 });
 
-socket.on('pick-card', (roomId, card) => {
-    picked++;
-    if (picked % 2 === 0) {
-      io.to(roomId).emit('new-round');
+socket.on('picked-card', (code, player) => {
+  for (let i = 0; i < socketRooms.get(code).users.length; i++) {
+    if (socketRooms.get(code).users[i].name == player.name) {
+      console.log(player.name);
+      socketRooms.get(code).users[i].cardsPicked = player.cardsPicked;
+      console.log(player.cardsPicked);
+      break;
     }
-});
+  }
+  picked++;
+  if (picked % 2 == 0) {
+    socket.emit('updated-card', socketRooms.get(code).users);
+  }
+})
 
 socket.on('end-game', (roomId) => {
   console.log(roomId);

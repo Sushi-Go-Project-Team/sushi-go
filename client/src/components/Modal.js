@@ -4,7 +4,7 @@ import Card from "../components/Card.js"
 import "../modal.css"
 import { useState, useCallback } from "react";
 
-export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPlayer }) {
+export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPlayer, player, setPlayers, players, socket, code }) {
     // const [chosenCards, setChosenCards] = useState([]);
     // const [pairs, setPairs] = useState([]);
     const [prevCard, setPrevCard] = useState(null);
@@ -16,8 +16,14 @@ export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPla
             ...prevPlayer,
             cardsPicked: [...cardsPicked, card],
             currentHand: cards
-        }));
-        pickCard();
+        }), () => {
+            console.log(player);
+            socket.emit('picked-card', code, player);
+            socket.on('updated-card', (users) => {
+              setPlayers(users);
+              console.log(players);
+            });
+          });
         // // Add clicked card to pickedCards array
         // setChosenCards([...chosenCards, card]);
         // // Check if the previously clicked card matches the current card
@@ -41,29 +47,29 @@ export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPla
     const handCards = cards.map((card) => {
         switch(card) {
             case "SSE":
-                return <img src="images/card-soy-sauce-egg.jpg" onClick={() => handleClick(card)} className="game--card" />;
+                return <img src="images/card-soy-sauce-egg.png" onClick={() => handleClick(card)} className="game--card" />;
             case "BC":
-                return <img src="images/card-bok-choy.jpg" onClick={() => handleClick(card)} className="game--card" />;
+                return <img src="images/card-bok-choy.png" onClick={() => handleClick(card)} className="game--card" />;
             case "Gy":
-                return <img src="images/card-gyoza.jpg" onClick={() => handleClick(card)} className="game--card"/>;
+                return <img src="images/card-gyoza.png" onClick={() => handleClick(card)} className="game--card"/>;
             case "Na-1":
-                return <img src="images/card-narutomaki-1.jpg" onClick={() => handleClick(card)} className="game--card" />;
+                return <img src="images/card-narutomaki-1.png" onClick={() => handleClick(card)} className="game--card" />;
             case "Na-2":
-                return <img src="images/card-narutomaki-2.jpg" onClick={() => handleClick(card)} className="game--card" />;
+                return <img src="images/card-narutomaki-2.png" onClick={() => handleClick(card)} className="game--card" />;
             case "Na-3":
-                return <img src="images/card-narutomaki-3.jpg" onClick={() => handleClick(card)} className="game--card" />;
+                return <img src="images/card-narutomaki-3.png" onClick={() => handleClick(card)} className="game--card" />;
             case "Ton":
-                return <img src="images/card-tonkatsu-ramen.jpg" onClick={() => handleClick(card)} className="game--card" />;
+                return <img src="images/card-tonkatsu-ramen.png" onClick={() => handleClick(card)} className="game--card" />;
             case "Tof":
-                return <img src="images/card-tofu-ramen.jpg" onClick={() => handleClick(card)} className="game--card"/>;
+                return <img src="images/card-tofu-ramen.png" onClick={() => handleClick(card)} className="game--card"/>;
             case "Spi":
-                return <img src="images/card-spicy-ramen.jpg" onClick={() => handleClick(card)} className="game--card"/>;
+                return <img src="images/card-spicy-ramen.png" onClick={() => handleClick(card)} className="game--card"/>;
             case "Moc":
-                return <img src="images/card-mochi.jpg" onClick={() => handleClick(card)} className="game--card"/>;
+                return <img src="images/card-mochi.png" onClick={() => handleClick(card)} className="game--card"/>;
             case "Nor":
-                return <img src="images/card-nori.jpg" onClick={() => handleClick(card)} className="game--card"/>;
+                return <img src="images/card-nori.png" onClick={() => handleClick(card)} className="game--card"/>;
             case "Cho":
-                return <img src="images/card-chopsticks.jpg" onClick={() => handleClick(card)} className="game--card"/>;
+                return <img src="images/card-chopsticks.png" onClick={() => handleClick(card)} className="game--card"/>;
             default:
               break;
           }

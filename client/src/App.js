@@ -126,18 +126,15 @@ export default function App() {
     socket.on('winner', (name1, score1, name2,  score2) => {
       const resultNames = [name1, name2];
       const resultScores = [score1, score2];
-      console.log(resultNames);
-      console.log(resultScores);
+      // console.log(resultNames);
+      // console.log(resultScores);
       setResults([name1, score1, name2, score2]);
-      console.log(results)
+      // console.log(results)
     });
   }
 
   function pickCard() {
-		socket.emit('picked-card', code, socket.id, player);
-		socket.on('join', (users) => {
-      setPlayers(users);
-		});
+		
   }
 
   return (
@@ -149,7 +146,11 @@ export default function App() {
         users = {players}
         endGame = {endGame}
         pickCard = {pickCard} 
-        setPlayer = {setPlayer}/>}></Route>
+        setPlayer = {setPlayer}
+        player = {player}
+        setPlayers = {setPlayers}
+        players = {players}
+        code = {code}/>}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join 
         socket = {socket}
