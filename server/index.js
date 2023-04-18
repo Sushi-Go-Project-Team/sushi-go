@@ -59,9 +59,9 @@ socket.on('end-game', (roomId) => {
   console.log(socketRooms);
   console.log(socketRooms.get(roomId));
   const players = socketRooms.get(roomId).users
-  const score1 = sumPointTotal(players[0].currentHand);
+  const score1 = Math.floor(sumPointTotal(players[0].currentHand));
   console.log(players[0].currentHand)
-  const score2 = sumPointTotal(players[1].currentHand);
+  const score2 = Math.floor(sumPointTotal(players[1].currentHand));
   console.log(score1);
   console.log(score2);
   if (score1 >= score2) {
