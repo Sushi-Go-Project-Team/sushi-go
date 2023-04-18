@@ -4,8 +4,11 @@ import PlayerCard from '../components/PlayerCard';
 import LoadPlayerRow from './LoadPlayer';
 
 const Landing = ({socket, code, players}) => {
+  // const users = players.map((player) => {
+  //   return <PlayerCard user={player.name} />
+  // });
   const users = players.map((player) => {
-    return <PlayerCard user={player.name} />
+    return player.name;
   });
 
   return (
@@ -13,10 +16,10 @@ const Landing = ({socket, code, players}) => {
         <h1 className = "gameLogo"> Ramen GO!</h1>
         <div className = "loadContainer">
           <h1 className = "gamePin"> GAME PIN: {code}</h1>
-          <LoadPlayerRow firstName = "Player 1"  secondName = "Player 2" />
-          <LoadPlayerRow firstName = "Player 3" secondName = "Player 4" />
+          <LoadPlayerRow firstName = {users[0]}  secondName = {users[1]} />
+          {/* <LoadPlayerRow firstName = "Player 3" secondName = "Player 4" /> */}
             <button id = "startBtn"><Link id= "startBtn" to="/game">Start Game!</Link></button>
-          {users}
+          {/* {users} */}
         </div>
     </div>
   )
