@@ -215,8 +215,8 @@ input[type=text] {
   margin: 0px;
   background-color: #B0BA73;
   overflow: auto;
+  height: 100vh;
 }
-
 .Card--name {
   font-size: 20px;
 }

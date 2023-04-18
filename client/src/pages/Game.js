@@ -86,7 +86,7 @@ export default function Game({socket, user, users, endGame, pickCard, setPlayer,
                     setOpenModal(true)
                     }}
                     >
-                        Open
+                        Pick Card
                 </button> 
                 {openModal && <Modal 
                 closeModal={setOpenModal} 
