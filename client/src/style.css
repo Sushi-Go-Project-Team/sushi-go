@@ -220,6 +220,7 @@ input[type=text] {
 
 .card--set{
   margin-left: 50px;
+  min-height: 310px;
 }
 
 .card--set-1{

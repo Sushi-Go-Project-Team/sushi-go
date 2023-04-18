@@ -21,7 +21,7 @@ export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPla
             } else {
                 setPlayer(users[1]);
             }
-            console.log(player.currentHand);
+            console.log(users);
         })
     }
 
