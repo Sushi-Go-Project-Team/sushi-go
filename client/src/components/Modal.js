@@ -16,14 +16,15 @@ export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPla
             ...prevPlayer,
             cardsPicked: [...cardsPicked, card],
             currentHand: cards
-        }), () => {
-            console.log(player);
-            socket.emit('picked-card', code, player);
-            socket.on('updated-card', (users) => {
-              setPlayers(users);
-              console.log(players);
-            });
-          });
+        }));
+        socket.emit('picked-card', code, player.name, card, cards);
+        // socket.on('updated-card', (users) => {
+        //     setPlayers(users);
+        // });
+        // , () => {
+        //     console.log(player);
+        //     socket.emit('picked-card', code, player);
+        //   });
         // // Add clicked card to pickedCards array
         // setChosenCards([...chosenCards, card]);
         // // Check if the previously clicked card matches the current card

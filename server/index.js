@@ -40,19 +40,15 @@ io.on("connection", (socket) => {
   io.to(roomId).emit('join', socketRooms.get(roomId).users);
 });
 
-socket.on('picked-card', (code, player) => {
+socket.on('picked-card', (code, name, card, cards) => {
   for (let i = 0; i < socketRooms.get(code).users.length; i++) {
-    if (socketRooms.get(code).users[i].name == player.name) {
-      console.log(player.name);
-      socketRooms.get(code).users[i].cardsPicked = player.cardsPicked;
-      console.log(player.cardsPicked);
+    if (socketRooms.get(code).users[i].name == name) {
+      socketRooms.get(code).users[i].cardsPicked = [...socketRooms.get(code).users[i].cardsPicked, card];
+      console.log(socketRooms.get(code).users[i].cardsPicked);
       break;
     }
   }
-  picked++;
-  if (picked % 2 == 0) {
-    socket.emit('updated-card', socketRooms.get(code).users);
-  }
+  socket.emit('updated-card', socketRooms.get(code).users);
 })
 
 socket.on('end-game', (roomId) => {

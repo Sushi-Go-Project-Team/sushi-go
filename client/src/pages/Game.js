@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {Link} from "react-router-dom"
 import Card from "../components/Card.js"
 import Modal from "../components/Modal.js"
@@ -7,11 +7,26 @@ import Button from "react-bootstrap/Button"
 
 export default function Game({socket, user, users, endGame, pickCard, setPlayer, player, setPlayers, players, code }) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
+
+    useEffect(() => {
+        // send events to server
+        // socket.emit('event1', {data: "some data"});
+    
+        //handle events from server
+        socket.on('updated-card', (users) => {
+          setPlayers(users);
+        });
+        
+        // cleanup
+        // return () => {
+        //   socket.disconnect();
+        // };
+      }, []);
     let otherHand;
     let otherName;
     for (let i = 0; i < users.length; i++) {
         if (users[i].name !== user.name) {
-            otherHand = users[i].currentHand;
+            otherHand = users[i].cardsPicked;
             otherName = users[i].name;
             break;
         }

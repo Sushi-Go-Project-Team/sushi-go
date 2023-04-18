@@ -54,10 +54,7 @@ export default function App() {
     // send events to server
     // socket.emit('event1', {data: "some data"});
 
-    // //handle events from server
-    // socket.on('event1', (data) => {
-    //   console.log('received data:', JSON.stringify(data));
-    // });
+    //handle events from server
     
     // cleanup
     // return () => {
