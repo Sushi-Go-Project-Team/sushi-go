@@ -18,7 +18,7 @@ export default function Join({socket, handleChange, handleNameChange, joinRoom, 
     return (
         <div className="join">
 			<div className = "join-div">
-			<img src="images/join-logo.png" alt="logo" className="join-image"/>
+			<img src="images/join-logo-v2.png" alt="logo" className="join-image"/>
 			</div>
 	        <div className="center join-div">
 				<p className="join-text">Enter Name:</p>
