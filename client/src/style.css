@@ -217,6 +217,15 @@ input[type=text] {
   overflow: auto;
   height: 100vh;
 }
+
+.card--set{
+  margin-left: 50px;
+}
+
+.card--set-1{
+  margin-top: 50px;
+}
+
 .Card--name {
   font-size: 20px;
 }
@@ -251,10 +260,22 @@ width: 150px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  row-gap: 100px;
+  row-gap: 10px;
 }
 .Card--container>* {
   flex: 1 1 740px;
+}
+
+.game-button {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.modalButton {
+  position: absolute;
+  top: 20px;
+  right: 50px;
 }
 
 body {
