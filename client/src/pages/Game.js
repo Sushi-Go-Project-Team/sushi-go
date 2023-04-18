@@ -5,9 +5,8 @@ import Modal from "../components/Modal.js"
 import { useState } from "react";
 import Button from "react-bootstrap/Button"
 
-export default function Game({socket, user, users, endGame, pickCard}) {
+export default function Game({socket, user, users, endGame, pickCard, setPlayer}) {
     const [openModal, setOpenModal] = useState(false) // don't want modal to be open initially
-    
     let otherHand;
     let otherName;
     for (let i = 0; i < users.length; i++) {
@@ -17,7 +16,8 @@ export default function Game({socket, user, users, endGame, pickCard}) {
             break;
         }
     }
-    const pickedCards = user.currentHand.map((card) => {
+    
+    const pickedCards = user.cardsPicked.map((card) => {
         switch(card) {
             case "SSE":
                 return <img src="images/card-soy-sauce-egg.jpg" className="game--card" />;
@@ -88,7 +88,7 @@ export default function Game({socket, user, users, endGame, pickCard}) {
                     >
                         Open
                 </button> 
-                {openModal && <Modal closeModal={setOpenModal} cards={user.currentHand} pickCard={pickCard} />}
+                {openModal && <Modal closeModal={setOpenModal} cards={user.currentHand} cardsPicked={user.cardsPicked} pickCard={pickCard} setPlayer={setPlayer} />}
                 <div className="Card--container">
                 <div className="Card--setOne">
                     <h2>{user.name}</h2>

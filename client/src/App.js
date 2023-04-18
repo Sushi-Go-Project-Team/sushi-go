@@ -145,7 +145,8 @@ export default function App() {
         user = {player}
         users = {players}
         endGame = {endGame}
-        pickCard = {pickCard} />}></Route>
+        pickCard = {pickCard} 
+        setPlayer = {setPlayer}/>}></Route>
       <Route path="/instructions" element={<Instructions />}></Route>
       <Route path="/join" element={<Join 
         socket = {socket}
