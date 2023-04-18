@@ -101,7 +101,7 @@ export default function Modal({ closeModal, cards, pickCard, cardsPicked, setPla
                         </div>
                     </div>
                 <div className="footer">
-                    <button onClick={() => closeModal(false)}>Exit</button>
+                    <button className = "button--link"onClick={() => closeModal(false)}>Exit</button>
                 </div>
             </div>
         </div>

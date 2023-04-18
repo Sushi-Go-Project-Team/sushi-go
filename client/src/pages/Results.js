@@ -13,7 +13,7 @@ export default function Results({socket, user, results}) {
             <div class = "container">
                 <ResultPlayerCard number = "1" name={results[0]} score={results[1]} />
                 <ResultPlayerCard number = "2" name={results[2]} score={results[3]} />
-                <Button className = "rematch"><Link to="/join" >Rematch!</Link></Button>
+                <button className = "rematch"><Link to="/join" className = "button--link">Play Again!</Link></button>
             </div>
         </div>
     )
