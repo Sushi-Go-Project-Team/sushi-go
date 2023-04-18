@@ -45,7 +45,10 @@ socket.on('picked-card', (code, name, card, cards) => {
     if (socketRooms.get(code).users[i].name == name) {
       socketRooms.get(code).users[i].cardsPicked = [...socketRooms.get(code).users[i].cardsPicked, card];
       console.log(socketRooms.get(code).users[i].cardsPicked);
-      break;
+    }
+    if (socketRooms.get(code).users[i].name != name) {
+      socketRooms.get(code).users[i].currentHand = cards;
+      console.log(socketRooms.get(code).users[i].currentHand);
     }
   }
   socket.emit('updated-card', socketRooms.get(code).users);
